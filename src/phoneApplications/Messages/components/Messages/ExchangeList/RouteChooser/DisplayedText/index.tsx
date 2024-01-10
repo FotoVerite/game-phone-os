@@ -1,4 +1,4 @@
-import { generateSkiaNode } from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/SkFunctions/skiaCalculations";
+import { generateSkiaNode } from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/SkFunctions/skiaCalculations";
 import { FC, useCallback, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import Animated, {

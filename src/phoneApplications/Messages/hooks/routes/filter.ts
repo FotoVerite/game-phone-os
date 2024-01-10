@@ -1,4 +1,4 @@
-import { MessageAppEventsType } from "@Components/appEvents/reducer/types";
+import { MessageAppEventsType } from "@/src/appEvents/reducer/types";
 
 import { ROUTE_STATUS_TYPE } from "./types";
 

@@ -1,7 +1,7 @@
-import SlideInTransitionContainer from "@Components/SlideInTransitionContainer";
-import { useConversation } from "@Components/phoneApplications/Messages/hooks/useConversation";
-import { CONVERSATION_REDUCER_ACTIONS } from "@Components/phoneApplications/Messages/hooks/useConversation/reducer/type";
-import { ConversationType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+import SlideInTransitionContainer from "@/src/SlideInTransitionContainer";
+import { useConversation } from "@/src/phoneApplications/Messages/hooks/useConversation";
+import { CONVERSATION_REDUCER_ACTIONS } from "@/src/phoneApplications/Messages/hooks/useConversation/reducer/type";
+import { ConversationType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 import { FC, useEffect } from "react";
 import { SharedValue } from "react-native-gesture-handler/lib/typescript/handlers/gestures/reanimatedWrapper";
 import { useInsetDimensions } from "src/utility/useInsetDimensions";

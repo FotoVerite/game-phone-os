@@ -1,5 +1,5 @@
-import { isDigestedChoosableRoute } from "@Components/phoneApplications/Messages/hooks/routes/guards";
-import { AbstractDigestedRouteType } from "@Components/phoneApplications/Messages/hooks/routes/types";
+import { isDigestedChoosableRoute } from "@/src/phoneApplications/Messages/hooks/routes/guards";
+import { AbstractDigestedRouteType } from "@/src/phoneApplications/Messages/hooks/routes/types";
 import React, {
   FC,
   PropsWithChildren,

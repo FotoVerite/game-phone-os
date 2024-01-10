@@ -1,21 +1,18 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { Image } from "expo-image";
 
-import { Text, View } from "@/components/Themed";
-import {
-  InfoType,
-  MESSAGE_CONTACT_INFO,
-  MESSAGE_CONTACT_NAME,
-} from "@/src/phoneApplications/Messages/constants";
-import { router, useLocalSearchParams } from "expo-router";
+import { Link, router, useLocalSearchParams } from "expo-router";
 import { FC, useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { theme } from "@/src/theme";
-import contactCards from "@/src/web/messages/ContactCollation";
+import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
-const ContactCard: FC = () => {
+const totalRoutes = (n = 0, c = 0) => n + c;
+const ContactCard: FC<{
+  contactList: { [key: string]: ConversationFileType };
+}> = ({ contactList }) => {
   const { contact } = useLocalSearchParams<{
-    contact?: keyof typeof MESSAGE_CONTACT_NAME;
+    contact?: string;
   }>();
 
   if (!contact) {
@@ -25,34 +22,61 @@ const ContactCard: FC = () => {
   const blurhash =
     "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
-  const name = MESSAGE_CONTACT_NAME[contact];
-  const avatar = MESSAGE_CONTACT_INFO[name].avatar;
+  const info = contactList[contact];
 
-  console.log(contactCards);
   return (
     <View style={styles.container}>
-      <LinearGradient
-        colors={MESSAGE_CONTACT_INFO[name].colors}
-        style={{ flex: 1, padding: theme.spacing.p2 }}
-      >
-        <Text style={styles.title}>{name}</Text>
-        <View
+      <View style={styles.row}>
+        <LinearGradient
+          colors={info.colors || []}
           style={{
-            width: "50%",
-            height: 300,
-            backgroundColor: "transparent",
+            width: theme.spacing.p1,
+            height: "100%",
+            marginEnd: theme.spacing.p1,
           }}
-        >
-          <Image
-            style={{ flex: 1, width: "100%", height: "100%" }}
-            source={avatar}
-            placeholder={blurhash}
-            contentFit="contain"
-            contentPosition="left top"
-            transition={100}
-          />
+        ></LinearGradient>
+        <View>
+          <Text style={styles.title}>{info.full_name}</Text>
+          <Text style={styles.title}>Contact Displays: {info.name}</Text>
+          <View>
+            <View
+              style={{
+                width: "50%",
+                height: 300,
+                backgroundColor: "transparent",
+              }}
+            >
+              <Image
+                style={{ flex: 1, width: "100%", height: "100%" }}
+                source={info.heroImage}
+                placeholder={blurhash}
+                contentFit="contain"
+                contentPosition="left top"
+                transition={100}
+              />
+            </View>
+            {info.description}
+            <Text style={styles.title}>Routes</Text>
+            <Text>{info.notificationRoutes?.length || 0} Notifications</Text>
+            <Text>{info.routes?.length || 0} Choice Based Routes</Text>
+            <Text>
+              {totalRoutes(
+                info.notificationRoutes?.length,
+                info.routes.length
+              ) || 0}{" "}
+              Total
+            </Text>
+            <Link
+              href={{
+                pathname: "/messages/routes/[id]",
+                params: { id: info.name },
+              }}
+            >
+              View Routes
+            </Link>
+          </View>
         </View>
-      </LinearGradient>
+      </View>
     </View>
   );
 };
@@ -69,6 +93,7 @@ const styles = StyleSheet.create({
     marginBottom: theme.spacing.p2,
   },
   row: {
+    flex: 1,
     flexDirection: "row",
   },
   separator: {

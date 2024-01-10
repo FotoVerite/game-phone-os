@@ -1,7 +1,7 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import ConversationEmitter, {
   CONVERSATION_EMITTER_EVENTS,
-} from "@Components/phoneApplications/Messages/emitters";
+} from "@/src/phoneApplications/Messages/emitters";
 import React, { FC } from "react";
 import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 import { theme } from "src/theme";

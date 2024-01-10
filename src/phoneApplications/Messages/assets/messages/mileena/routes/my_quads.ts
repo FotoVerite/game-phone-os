@@ -1,6 +1,6 @@
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { ChoosableRouteType } from "@/src/phoneApplications/Messages/hooks/routes/types";
 import { MILEENA_ROUTE_IDS } from "./routes";
-import { MESSAGE_CONTACT_NAME } from "../../constants";
-import { ChoosableRouteType } from "../../hooks/routes/types";
 
 export enum MILEENA_QUAD_OPTIONS {
   A = "My quads",

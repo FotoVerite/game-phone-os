@@ -2,7 +2,7 @@ import {
   AppEventsType,
   MessageAppEventsContainerType,
   MessageRouteEventDataType,
-} from "@Components/appEvents/reducer/types";
+} from "@/src/appEvents/reducer/types";
 import { Draft, produce } from "immer";
 import moment, { Moment } from "moment";
 

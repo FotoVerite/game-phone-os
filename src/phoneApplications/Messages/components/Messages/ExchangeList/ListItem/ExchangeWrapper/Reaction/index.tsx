@@ -1,4 +1,4 @@
-import { FontAwesomeGlyphs } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { FontAwesomeGlyphs } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import React, { FC, useEffect } from "react";
 import { View, StyleSheet } from "react-native";
@@ -30,7 +30,7 @@ const Reaction: FC<PropsType> = ({
   useEffect(() => {
     scale.value = withDelay(
       reactionDelay || 1000,
-      withSpring(0.8, { overshootClamping: false, stiffness: 250 }),
+      withSpring(0.8, { overshootClamping: false, stiffness: 250 })
     );
   }, [reactionAnimated, reactionDelay, scale]);
 

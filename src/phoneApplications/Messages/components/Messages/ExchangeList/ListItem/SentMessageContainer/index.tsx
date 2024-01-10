@@ -1,4 +1,4 @@
-import { CONVERSATION_REDUCER_ACTIONS } from "@Components/phoneApplications/Messages/hooks/useConversation/reducer/type";
+import { CONVERSATION_REDUCER_ACTIONS } from "@/src/phoneApplications/Messages/hooks/useConversation/reducer/type";
 import { FC, PropsWithChildren, useEffect } from "react";
 import Animated, {
   runOnJS,
@@ -33,7 +33,7 @@ const SentMessageContainer: FC<
         contentDelay,
         withTiming(1, { duration: 250 }, (finished) => {
           runOnJS(continueRoute)(contentDelay);
-        }),
+        })
       );
     }
   }, [contentDelay, dispatch, height, opacity, resolved]);

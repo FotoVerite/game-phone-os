@@ -1,11 +1,11 @@
-import { NextMessageInQueue } from "@Components/phoneApplications/Messages/hooks/routes/types";
+import { NextMessageInQueue } from "@/src/phoneApplications/Messages/hooks/routes/types";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { useDeleteAndReplace } from "./useDeleteAndReplace";
 import ListOffsetEmitter, { LIST_EMITTER_EVENTS } from "../../../emitters";
 import { MESSAGE_SEND_BUTTON_STATE } from "../../ChevronButton";
 import { DISPLAYED_TEXT_STATES } from "../../DisplayedText";
-import { NEXT_MESSAGE_EFFECT_TYPE } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { NEXT_MESSAGE_EFFECT_TYPE } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 
 export const useButtonStateMachine = (
   openOptionList: React.Dispatch<React.SetStateAction<boolean>>,

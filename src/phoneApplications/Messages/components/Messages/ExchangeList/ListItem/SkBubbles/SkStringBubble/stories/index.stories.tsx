@@ -1,8 +1,8 @@
 import {
   MESSAGE_CONTACT_INFO,
   MESSAGE_CONTACT_NAME,
-} from "@Components/phoneApplications/Messages/constants";
-import { MESSAGE_CONTENT } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+} from "@/src/phoneApplications/Messages/constants";
+import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import { vec } from "@shopify/react-native-skia";
 import { ElementType } from "react";
 import { View } from "react-native";

@@ -1,16 +1,16 @@
 import {
   MESSAGE_CONTACT_NAME,
   SNAPSHOT_NAMES,
-} from "@Components/phoneApplications/Messages/constants";
+} from "@/src/phoneApplications/Messages/constants";
 import {
   EFFECT_TYPE,
   MESSAGE_CONTENT,
-} from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+} from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
   ChoosableRouteType,
   OPTION_EFFECT_TYPE,
   ROUTE_STATUS_TYPE,
-} from "@Components/phoneApplications/Messages/hooks/routes/types";
+} from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 import { leo_monologue_replacement_one } from "./monologue_replacement";
 import { TO_SELF_IDS } from "./routes";

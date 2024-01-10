@@ -1,7 +1,7 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import ConversationEmitter, {
   CONVERSATION_EMITTER_EVENTS,
-} from "@Components/phoneApplications/Messages/emitters";
+} from "@/src/phoneApplications/Messages/emitters";
 import { FC } from "react";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
@@ -13,7 +13,7 @@ export const SkVcardBubble: FC<SkBubbleTypeWithGradient> = (props) => {
   const initialsCircle = useInitials(
     props.width,
     props.height,
-    props.content as MESSAGE_CONTACT_NAME,
+    props.content as MESSAGE_CONTACT_NAME
   );
 
   return (

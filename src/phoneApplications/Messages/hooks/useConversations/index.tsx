@@ -1,5 +1,5 @@
-import { useAppEventsContext } from "@Components/appEvents/context";
-import { AppEventsType } from "@Components/appEvents/reducer/types";
+import { useAppEventsContext } from "@/src/appEvents/context";
+import { AppEventsType } from "@/src/appEvents/reducer/types";
 import { produce } from "immer";
 import moment from "moment";
 import { useEffect, useMemo, useState } from "react";

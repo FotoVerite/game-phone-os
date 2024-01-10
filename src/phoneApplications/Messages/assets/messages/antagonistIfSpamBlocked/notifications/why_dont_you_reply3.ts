@@ -1,6 +1,6 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
-import { MESSAGE_CONTENT } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
-import { ROUTE_STATUS_TYPE } from "@Components/phoneApplications/Messages/hooks/routes/types";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { ROUTE_STATUS_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 import { ANTAGONIST_IF_BLOCKED } from "../routes/routes";
 

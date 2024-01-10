@@ -1,4 +1,4 @@
-import { MESSAGE_CONTENT } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 
 import { EmojiBubble } from "./EmojiBubble";
 import { ReadLabel } from "./ReadLabel";

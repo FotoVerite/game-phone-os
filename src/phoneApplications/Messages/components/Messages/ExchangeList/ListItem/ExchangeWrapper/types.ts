@@ -1,5 +1,5 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
-import { FontAwesomeGlyphs } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { FontAwesomeGlyphs } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import { PropsWithChildren } from "react";
 import { FlexAlignType, ImageSourcePropType } from "react-native";
 import { SharedValue } from "react-native-reanimated";

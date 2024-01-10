@@ -2,7 +2,7 @@ import {
   OptionType,
   OptionTypeWithDisplayEffect,
   OptionTypeWithShaderEffect,
-} from "@Components/phoneApplications/Messages/hooks/routes/types";
+} from "@/src/phoneApplications/Messages/hooks/routes/types";
 import { SharedValue } from "react-native-reanimated";
 
 export interface AbstractOptionLabelType {

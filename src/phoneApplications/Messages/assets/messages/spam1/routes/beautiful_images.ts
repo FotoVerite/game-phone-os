@@ -1,12 +1,12 @@
 import {
   MESSAGE_CONTACT_NAME,
   SNAPSHOT_NAMES,
-} from "@Components/phoneApplications/Messages/constants";
+} from "@/src/phoneApplications/Messages/constants";
 import {
   EFFECT_TYPE,
   MESSAGE_CONTENT,
-} from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
-import { ChoosableRouteType } from "@Components/phoneApplications/Messages/hooks/routes/types";
+} from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { ChoosableRouteType } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 import { SPAM1_IDS } from "./routes";
 import doll1 from "../../../images/broken_dolls1.jpeg";

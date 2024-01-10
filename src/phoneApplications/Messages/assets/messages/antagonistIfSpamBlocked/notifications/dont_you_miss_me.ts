@@ -1,5 +1,5 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
-import { ROUTE_STATUS_TYPE } from "@Components/phoneApplications/Messages/hooks/routes/types";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { ROUTE_STATUS_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 import { SPAM1_IDS } from "../../spam1/routes/routes";
 import { ZARA_ROUTE_IDS } from "../../zara/routes/routes";

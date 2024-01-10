@@ -1,4 +1,4 @@
-import { MESSAGE_CONTACT_INFO } from "@Components/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_INFO } from "@/src/phoneApplications/Messages/constants";
 import { ElementType } from "react";
 import { View } from "react-native";
 import FontsContextProvider from "src/contexts/fonts";

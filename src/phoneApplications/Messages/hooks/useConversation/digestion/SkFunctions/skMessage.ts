@@ -1,7 +1,7 @@
 import {
   MESSAGE_CONTACT_INFO,
   MESSAGE_CONTACT_NAME,
-} from "@Components/phoneApplications/Messages/constants";
+} from "@/src/phoneApplications/Messages/constants";
 import { Vector, SkFont } from "@shopify/react-native-skia";
 import * as Crypto from "expo-crypto";
 import { Image, ImageSourcePropType } from "react-native";

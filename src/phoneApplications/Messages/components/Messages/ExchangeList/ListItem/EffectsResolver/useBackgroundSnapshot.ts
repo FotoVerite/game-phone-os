@@ -1,17 +1,17 @@
-import { EFFECT_TYPE } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { EFFECT_TYPE } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
   BubbleItemType,
   isDigestedBubble,
-} from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/types";
-import { useSnapshotContext } from "@Components/snapShot/context";
-import { SNAPSHOT_TYPES } from "@Components/snapShot/context/type";
+} from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/types";
+import { useSnapshotContext } from "@/src/snapShot/context";
+import { SNAPSHOT_TYPES } from "@/src/snapShot/context/type";
 import { useEffect } from "react";
 
 import { ExchangeListItemType } from "../types";
 
 export const useEffectsResolver = (
   props: ExchangeListItemType,
-  resolved: boolean,
+  resolved: boolean
 ) => {
   const setTakeSnapShot = useSnapshotContext().setTakeSnapShot;
 

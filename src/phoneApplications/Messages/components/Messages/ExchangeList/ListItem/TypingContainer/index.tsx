@@ -1,7 +1,7 @@
 import {
   CONVERSATION_REDUCER_ACTIONS,
   ConversationReducerActionsType,
-} from "@Components/phoneApplications/Messages/hooks/useConversation/reducer/type";
+} from "@/src/phoneApplications/Messages/hooks/useConversation/reducer/type";
 import React, { FC, PropsWithChildren, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import Animated, {

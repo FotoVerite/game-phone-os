@@ -1,15 +1,15 @@
 import {
   MESSAGE_CONTACT_NAME,
   SNAPSHOT_NAMES,
-} from "@Components/phoneApplications/Messages/constants";
+} from "@/src/phoneApplications/Messages/constants";
 import {
   EFFECT_TYPE,
   MESSAGE_CONTENT,
-} from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+} from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
   ChoosableRouteType,
   ROUTE_STATUS_TYPE,
-} from "@Components/phoneApplications/Messages/hooks/routes/types";
+} from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 import { ANTAGONIST_IF_BLOCKED } from "../routes/routes";
 

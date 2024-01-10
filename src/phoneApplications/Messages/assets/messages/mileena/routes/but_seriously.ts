@@ -1,6 +1,6 @@
 import { MILEENA_ROUTE_IDS } from "./routes";
-import { MESSAGE_CONTACT_NAME } from "../../constants";
-import { ChoosableRouteType } from "../../hooks/routes/types";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { ChoosableRouteType } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 export enum MILEENA_BUT_SERIOUSLY_OPTIONS {
   A = "But seriously, I can't walk",

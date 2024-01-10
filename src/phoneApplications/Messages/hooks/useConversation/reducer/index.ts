@@ -1,5 +1,5 @@
-import { APP_EVENTS_ACTIONS } from "@Components/appEvents/reducer/types";
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { APP_EVENTS_ACTIONS } from "@/src/appEvents/reducer/types";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { produce, nothing } from "immer";
 
 import {

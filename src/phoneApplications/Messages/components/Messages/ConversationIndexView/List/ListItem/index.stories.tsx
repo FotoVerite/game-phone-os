@@ -1,4 +1,4 @@
-import image from "@Components/notifications/NotificationPopupContainer/NotificationPopup/assets/default.jpeg";
+import image from "@/src/notifications/NotificationPopupContainer/NotificationPopup/assets/default.jpeg";
 import { ElementType } from "react";
 import { View } from "react-native";
 

@@ -1,4 +1,4 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 
 const LEO = MESSAGE_CONTACT_NAME.LEO;
 const SELF = MESSAGE_CONTACT_NAME.SELF;

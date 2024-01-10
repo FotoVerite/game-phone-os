@@ -1,8 +1,8 @@
 import ConversationEmitter, {
   CONVERSATION_EMITTER_EVENTS,
-} from "@Components/phoneApplications/Messages/emitters";
-import { formatConversationTime } from "@Components/phoneApplications/Messages/hooks/useConversations/determineLogLine";
-import { ConversationListType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+} from "@/src/phoneApplications/Messages/emitters";
+import { formatConversationTime } from "@/src/phoneApplications/Messages/hooks/useConversations/determineLogLine";
+import { ConversationListType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import React, { FC, memo } from "react";
 import { StyleSheet, Image, Text, TouchableOpacity, View } from "react-native";

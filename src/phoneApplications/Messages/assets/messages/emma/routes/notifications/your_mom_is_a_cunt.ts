@@ -1,8 +1,8 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import {
   NotificationRouteFileType,
   ROUTE_STATUS_TYPE,
-} from "@Components/phoneApplications/Messages/hooks/routes/types";
+} from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 import { LENNY_ROUTE_IDS } from "../../../lenny/routes/routes";
 import { EMMA_ROUTE_IDS } from "../routes";

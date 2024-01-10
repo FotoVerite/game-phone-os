@@ -1,5 +1,5 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
-import { NotificationRouteFileType } from "@Components/phoneApplications/Messages/hooks/routes/types";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { NotificationRouteFileType } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 import { ZARA_ROUTE_IDS } from "../routes";
 

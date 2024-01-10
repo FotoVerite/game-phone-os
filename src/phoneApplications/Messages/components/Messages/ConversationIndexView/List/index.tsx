@@ -1,4 +1,4 @@
-import { ConversationListType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+import { ConversationListType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 import React, { FC, RefObject } from "react";
 import { ListRenderItem, StyleSheet, View } from "react-native";
 import Animated from "react-native-reanimated";

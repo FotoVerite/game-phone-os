@@ -1,9 +1,5 @@
-import {
-  MESSAGE_CONTACT_INFO,
-  MESSAGE_CONTACT_NAME,
-} from "@Components/phoneApplications/Messages/constants";
-import { ConversationFileType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
-
+import { MESSAGE_CONTACT_NAME, MESSAGE_CONTACT_INFO } from "../../../constants";
+import { ConversationFileType } from "../../../hooks/useConversations/types";
 import { i_dont_know_what_to_do_with_myself } from "./routes/I_really_dont_know_what_to_do_with_myself";
 import { spammer_is_being_weird } from "./routes/after_weirdness_starts/spammer_is_being_weird";
 import { borked_phone } from "./routes/borked_phone";
@@ -22,7 +18,7 @@ import { your_day_worse_then_mine } from "./routes/notifications/your_day_worse_
 
 const ZARA = MESSAGE_CONTACT_NAME.ZARA;
 
-export const zara: ConversationFileType = {
+const zara: ConversationFileType = {
   name: ZARA,
   tags: [ZARA, "Zara", "Hopescope", "Panopticon", "Ads", "Money"],
   heroImage: MESSAGE_CONTACT_INFO[ZARA].avatar,
@@ -47,3 +43,5 @@ export const zara: ConversationFileType = {
   ],
   exchanges: [],
 };
+
+export default zara;

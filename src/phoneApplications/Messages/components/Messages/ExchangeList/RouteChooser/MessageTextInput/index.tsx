@@ -1,4 +1,4 @@
-import { NextMessageInQueue } from "@Components/phoneApplications/Messages/hooks/routes/types";
+import { NextMessageInQueue } from "@/src/phoneApplications/Messages/hooks/routes/types";
 import { FC } from "react";
 import { View, TouchableWithoutFeedback, StyleSheet } from "react-native";
 import { theme } from "src/theme";

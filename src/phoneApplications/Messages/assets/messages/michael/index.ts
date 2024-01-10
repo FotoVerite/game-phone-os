@@ -1,8 +1,8 @@
 import {
   MESSAGE_CONTACT_INFO,
   MESSAGE_CONTACT_NAME,
-} from "@Components/phoneApplications/Messages/constants";
-import { ConversationFileType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+} from "@/src/phoneApplications/Messages/constants";
+import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
 import { i_feel_wrong } from "./routes/choosable/I_feel_wrong";
 import { michael_about_tonight_reply } from "./routes/choosable/michae_about_tonight_reply";

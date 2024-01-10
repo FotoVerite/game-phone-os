@@ -1,5 +1,5 @@
-import { DigestedConversationListItem } from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/types";
-import { ConversationReducerActionsType } from "@Components/phoneApplications/Messages/hooks/useConversation/reducer/type";
+import { DigestedConversationListItem } from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/types";
+import { ConversationReducerActionsType } from "@/src/phoneApplications/Messages/hooks/useConversation/reducer/type";
 import { FC, useMemo, useEffect } from "react";
 import { ListRenderItem, StyleSheet, View } from "react-native";
 import Animated, {
@@ -22,7 +22,7 @@ const renderItem: ListRenderItem<ExchangeListItemType> = ({ item }) => (
 
 const getItemLayout = (
   data: ArrayLike<ExchangeListItemType> | null | undefined,
-  index: number,
+  index: number
 ) => ({
   length: data ? data[index].height + data[index].paddingBottom : 0,
   offset: data ? data[index].offset : 0,
@@ -61,7 +61,7 @@ const List: FC<{
         }
         return acc;
       },
-      { index: exchanges.length - 1, height: windowHeight - 500 },
+      { index: exchanges.length - 1, height: windowHeight - 500 }
     ).index;
   }, [exchanges, windowHeight]);
 

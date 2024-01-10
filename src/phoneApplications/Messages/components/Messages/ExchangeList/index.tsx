@@ -1,5 +1,5 @@
-import { DigestedConversationType } from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/types";
-import { ConversationDispatchType } from "@Components/phoneApplications/Messages/hooks/useConversation/types";
+import { DigestedConversationType } from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/types";
+import { ConversationDispatchType } from "@/src/phoneApplications/Messages/hooks/useConversation/types";
 import React, { FC } from "react";
 import { View } from "react-native";
 import { useSharedValue } from "react-native-reanimated";

@@ -1,8 +1,8 @@
 //import panopticon from '@apps/Messages/assets/messages/pantopitcon.jpeg';
 
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
-import { MESSAGE_CONTENT } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
-import { ConversationExchangeType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { ConversationExchangeType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
 export const advertisementExchange: ConversationExchangeType = {
   time: "2021-05-20T14:00:00Z",

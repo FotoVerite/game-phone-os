@@ -1,7 +1,7 @@
 import {
   MediaImageElement,
   useMediaContext,
-} from "@Components/phoneApplications/Messages/context/Media";
+} from "@/src/phoneApplications/Messages/context/Media";
 import { useImage, Canvas, Group, Image } from "@shopify/react-native-skia";
 import React, { FC, useEffect } from "react";
 import {
@@ -28,7 +28,7 @@ export const SkImageBubble: FC<SkBubbleType> = ({
     height,
     16,
     addressee,
-    isLastInExchange ? 0 : 1,
+    isLastInExchange ? 0 : 1
   );
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export const SkImageBubble: FC<SkBubbleType> = ({
           <MediaImageElement
             source={content as ImageSourcePropType}
             aspectRatio={width / height}
-          />,
+          />
         );
       }}
     >

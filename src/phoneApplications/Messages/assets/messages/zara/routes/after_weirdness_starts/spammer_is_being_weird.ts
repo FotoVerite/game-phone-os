@@ -1,12 +1,12 @@
 import {
   MESSAGE_CONTACT_NAME,
   SNAPSHOT_NAMES,
-} from "@Components/phoneApplications/Messages/constants";
-import { MESSAGE_CONTENT } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+} from "@/src/phoneApplications/Messages/constants";
+import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
   ChoosableRouteType,
   ROUTE_STATUS_TYPE,
-} from "@Components/phoneApplications/Messages/hooks/routes/types";
+} from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 import { SPAM1_IDS } from "../../../spam1/routes/routes";
 import { ZARA_ROUTE_IDS } from "../routes";

@@ -7,8 +7,8 @@ import BaseOption from "./BaseOption";
 import { ShaderOptionLabelType } from "./type";
 import buzzer from "../assets/buzzer.mp3";
 import staticBG from "../assets/static.gif";
-import { OPTION_EFFECT_TYPE } from "@Components/phoneApplications/Messages/hooks/routes/types";
-import { EFFECT_TYPE } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { OPTION_EFFECT_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
+import { EFFECT_TYPE } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import { SHADER_TYPES } from "../../../ListItem/SkBubbles/hooks/useShader";
 
 const OptionWithShader: FC<ShaderOptionLabelType> = ({

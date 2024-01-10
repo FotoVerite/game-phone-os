@@ -1,8 +1,8 @@
 import {
   MESSAGE_CONTACT_INFO,
   MESSAGE_CONTACT_NAME,
-} from "@Components/phoneApplications/Messages/constants";
-import { ConversationFileType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+} from "@/src/phoneApplications/Messages/constants";
+import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
 const NAME = MESSAGE_CONTACT_NAME.SPAM1;
 export const spam1: ConversationFileType = {

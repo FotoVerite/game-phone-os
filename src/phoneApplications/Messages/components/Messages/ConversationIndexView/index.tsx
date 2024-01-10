@@ -1,4 +1,4 @@
-import { ConversationListType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+import { ConversationListType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 import { FC } from "react";
 import { StyleSheet } from "react-native";
 import Animated, {
@@ -24,7 +24,7 @@ const ConversationIndexView: FC<{
       backgroundColor: interpolateColor(
         shrink.value,
         [0, 1],
-        ["transparent", "#8d8a8a"],
+        ["transparent", "#8d8a8a"]
       ),
       borderTopLeftRadius: interpolate(shrink.value, [0, 1], [0, 10]),
       borderTopRightRadius: interpolate(shrink.value, [0, 1], [0, 10]),

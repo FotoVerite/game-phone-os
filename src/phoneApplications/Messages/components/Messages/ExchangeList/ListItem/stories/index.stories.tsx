@@ -1,8 +1,8 @@
-import unknown from "@Components/phoneApplications/Messages/assets/avatars/unknown.jpeg";
+import unknown from "@/src/phoneApplications/Messages/assets/avatars/unknown.jpeg";
 import {
   MESSAGE_CONTACT_INFO,
   MESSAGE_CONTACT_NAME,
-} from "@Components/phoneApplications/Messages/constants";
+} from "@/src/phoneApplications/Messages/constants";
 import { ElementType } from "react";
 import { View } from "react-native";
 

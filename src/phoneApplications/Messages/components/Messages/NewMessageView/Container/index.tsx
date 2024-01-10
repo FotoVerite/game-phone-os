@@ -1,5 +1,5 @@
-import { DigestedConversationType } from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/types";
-import { ConversationDispatchType } from "@Components/phoneApplications/Messages/hooks/useConversation/types";
+import { DigestedConversationType } from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/types";
+import { ConversationDispatchType } from "@/src/phoneApplications/Messages/hooks/useConversation/types";
 import { FC } from "react";
 
 import ConversationList from "../../ExchangeList";

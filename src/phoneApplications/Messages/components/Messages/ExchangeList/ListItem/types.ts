@@ -1,9 +1,9 @@
 import {
   BubbleItemType,
   DigestedConversationListItem,
-} from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/types";
-import { ConversationReducerActionsType } from "@Components/phoneApplications/Messages/hooks/useConversation/reducer/type";
-import { ConversationDispatchType } from "@Components/phoneApplications/Messages/hooks/useConversation/types";
+} from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/types";
+import { ConversationReducerActionsType } from "@/src/phoneApplications/Messages/hooks/useConversation/reducer/type";
+import { ConversationDispatchType } from "@/src/phoneApplications/Messages/hooks/useConversation/types";
 import Animated, { SharedValue } from "react-native-reanimated";
 
 type AdditionalProps = {

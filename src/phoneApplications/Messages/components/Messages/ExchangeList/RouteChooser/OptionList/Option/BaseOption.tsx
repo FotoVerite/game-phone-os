@@ -1,4 +1,4 @@
-import { getWidthFromGlyphs } from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/SkFunctions/skiaCalculations";
+import { getWidthFromGlyphs } from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/SkFunctions/skiaCalculations";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import {
   Canvas,

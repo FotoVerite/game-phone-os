@@ -1,8 +1,8 @@
-import { useAppEventsContext } from "@Components/appEvents/context";
+import { useAppEventsContext } from "@/src/appEvents/context";
 import {
   APP_EVENTS_ACTIONS,
   AppEventsType,
-} from "@Components/appEvents/reducer/types";
+} from "@/src/appEvents/reducer/types";
 import { produce } from "immer";
 import { useState, useCallback, useMemo, useEffect } from "react";
 import { delayFor } from "src/utility/async";
@@ -141,19 +141,16 @@ const reduceConversations = (
   conversations: ConversationFileType[],
   events: AppEventsType
 ) => {
-  return conversations.reduce(
-    (ret, conversation) => {
-      const [untriggered] = reduceAndSortRoutes(
-        conversation,
-        events.Messages,
-        {}
-      );
-      Object.keys(untriggered).reduce((acc, key) => {
-        acc[`${conversation.name}-${key}`] = untriggered[key];
-        return acc;
-      }, ret);
-      return ret;
-    },
-    {} as { [index: string]: AbstractDigestedRouteType }
-  );
+  return conversations.reduce((ret, conversation) => {
+    const [untriggered] = reduceAndSortRoutes(
+      conversation,
+      events.Messages,
+      {}
+    );
+    Object.keys(untriggered).reduce((acc, key) => {
+      acc[`${conversation.name}-${key}`] = untriggered[key];
+      return acc;
+    }, ret);
+    return ret;
+  }, {} as { [index: string]: AbstractDigestedRouteType });
 };

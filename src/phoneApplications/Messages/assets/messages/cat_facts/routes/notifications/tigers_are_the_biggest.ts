@@ -1,4 +1,4 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 
 import { ZARA_ROUTE_IDS } from "../../../zara/routes/routes";
 import { CAT_FACT_IDS } from "../routes";

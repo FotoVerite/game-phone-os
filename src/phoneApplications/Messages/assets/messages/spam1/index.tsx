@@ -1,8 +1,8 @@
 import {
   MESSAGE_CONTACT_INFO,
   MESSAGE_CONTACT_NAME,
-} from "@Components/phoneApplications/Messages/constants";
-import { ConversationFileType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+} from "@/src/phoneApplications/Messages/constants";
+import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
 import {
   did_not_send_images,
@@ -17,7 +17,7 @@ import {
 } from "./routes/spam_exchange_two";
 import { what_is_with_this_serial_killer_bullshit } from "./routes/what_is_with_this_serial_stalker_bullshit";
 import { ZARA_ROUTE_IDS } from "../zara/routes/routes";
-import { ROUTE_STATUS_TYPE } from "@Components/phoneApplications/Messages/hooks/routes/types";
+import { ROUTE_STATUS_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 const NAME = MESSAGE_CONTACT_NAME.SPAM1;
 export const spam1: ConversationFileType = {

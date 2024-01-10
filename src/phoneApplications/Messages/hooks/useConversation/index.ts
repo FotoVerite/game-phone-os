@@ -1,8 +1,8 @@
-import { useAppEventsContext } from "@Components/appEvents/context";
+import { useAppEventsContext } from "@/src/appEvents/context";
 import {
   APP_EVENTS_ACTIONS,
   AppEventsReducerActionsType,
-} from "@Components/appEvents/reducer/types";
+} from "@/src/appEvents/reducer/types";
 import { useRef, useMemo, useReducer, useCallback, useEffect } from "react";
 import { useFontsContext } from "src/contexts/fonts";
 import { useImageCacheContext } from "src/contexts/imageCache";

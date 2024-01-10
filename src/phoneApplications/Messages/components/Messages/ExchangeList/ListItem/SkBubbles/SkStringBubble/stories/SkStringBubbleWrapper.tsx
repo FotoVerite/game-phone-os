@@ -1,4 +1,4 @@
-import { GetDimensionsAndSkiaNodes } from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/SkFunctions/skiaCalculations";
+import { GetDimensionsAndSkiaNodes } from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/SkFunctions/skiaCalculations";
 import { FC } from "react";
 import Animated, { SharedValue } from "react-native-reanimated";
 import { useFonts } from "src/contexts/fonts/hooks/useFonts";
@@ -26,7 +26,7 @@ export const SkStringBubbleWrapper: FC<SkStringWrapperType> = (props) => {
     fonts?.SFPro,
     props.content,
     400,
-    props.addressee,
+    props.addressee
   );
   return (
     <SkStringBubble

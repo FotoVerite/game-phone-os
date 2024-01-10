@@ -1,7 +1,7 @@
 import {
   APP_EVENTS_ACTIONS,
   EventPropsPayloadType,
-} from "@Components/appEvents/reducer/types";
+} from "@/src/appEvents/reducer/types";
 
 import {
   AbstractDigestedRouteType,
@@ -14,7 +14,7 @@ import {
   DigestedConversationWithStartedRoute,
 } from "../digestion/types";
 import { isDigestedChoosableRoute } from "../../routes/guards";
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 
 export const createCleanupPayload = (
   draft: DigestedConversationWithStartedRoute,

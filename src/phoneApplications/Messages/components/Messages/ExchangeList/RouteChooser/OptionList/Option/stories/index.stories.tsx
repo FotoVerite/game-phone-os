@@ -1,4 +1,4 @@
-import { OPTION_EFFECT_TYPE } from "@Components/phoneApplications/Messages/hooks/routes/types";
+import { OPTION_EFFECT_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
 import { ElementType } from "react";
 import { View } from "react-native";
 import FontsContextProvider from "src/contexts/fonts";

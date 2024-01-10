@@ -88,6 +88,10 @@ export const MESSAGE_CONTACT_INFO: {
     avatar: defaultAvatar,
     colors: ["#6b6b6d", "#363243"],
   },
+  [MESSAGE_CONTACT_NAME.MILEENA]: {
+    avatar: defaultAvatar,
+    colors: ["#6b6b6d", "#363243"],
+  },
 
   //   Mileena: { avatar: meleenaAvatar, colors: ["#ff0095", "#80194d"] },
   "Maybe: Michael": { avatar: michaelAvatar, colors: ["#f54295", "#8900fa"] },

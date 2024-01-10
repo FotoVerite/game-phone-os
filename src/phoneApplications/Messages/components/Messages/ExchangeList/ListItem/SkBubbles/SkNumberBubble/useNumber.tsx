@@ -1,4 +1,4 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { Text } from "@shopify/react-native-skia";
 import { useFontsContext } from "src/contexts/fonts";
 

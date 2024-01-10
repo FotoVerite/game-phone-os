@@ -1,5 +1,5 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
-import { ChoosableRouteType } from "@Components/phoneApplications/Messages/hooks/routes/types";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { ChoosableRouteType } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 import { ZARA_CONTACT_CONVERSATIONS_OPTIONS } from "../contact_conversation";
 import { ZARA_ROUTE_IDS } from "../routes";

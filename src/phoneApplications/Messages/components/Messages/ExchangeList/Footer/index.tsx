@@ -1,8 +1,8 @@
-import { useAppEventsContext } from "@Components/appEvents/context";
+import { useAppEventsContext } from "@/src/appEvents/context";
 import {
   ConversationReducerActionsType,
   CONVERSATION_REDUCER_ACTIONS,
-} from "@Components/phoneApplications/Messages/hooks/useConversation/reducer/type";
+} from "@/src/phoneApplications/Messages/hooks/useConversation/reducer/type";
 import React, { FC } from "react";
 import { Text } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";

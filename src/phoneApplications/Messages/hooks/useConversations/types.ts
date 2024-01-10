@@ -10,6 +10,7 @@ import {
   NotificationRouteFileType,
   RouteConditionsType,
 } from "../routes/types";
+import { ReactElement } from "react";
 
 export type MessageContentType = string | ContentWithMetaType;
 
@@ -66,4 +67,4 @@ export type ConversationFileType = Omit<
   | "logline_content"
   | "logline_timestamp"
   | "availableEventRoutes"
->;
+> & { full_name?: string; description?: ReactElement; colors?: string[] };

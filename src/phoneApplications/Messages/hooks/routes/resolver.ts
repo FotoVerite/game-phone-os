@@ -1,4 +1,4 @@
-import { AppEventsType } from "@Components/appEvents/reducer/types";
+import { AppEventsType } from "@/src/appEvents/reducer/types";
 import { produce } from "immer";
 import { isSkImage } from "src/contexts/imageCache/guards";
 import { ImageCacheType } from "src/contexts/imageCache/types";

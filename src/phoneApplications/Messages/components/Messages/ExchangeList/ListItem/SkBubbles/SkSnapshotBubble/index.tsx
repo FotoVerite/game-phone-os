@@ -1,8 +1,8 @@
 import {
   MediaImageElement,
   useMediaContext,
-} from "@Components/phoneApplications/Messages/context/Media";
-import { ImageDigestionPropsType } from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/types";
+} from "@/src/phoneApplications/Messages/context/Media";
+import { ImageDigestionPropsType } from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/types";
 import { Canvas, Group, Image as SkiaImage } from "@shopify/react-native-skia";
 import React, { FC, useEffect } from "react";
 import { TouchableWithoutFeedback, View } from "react-native";
@@ -32,7 +32,7 @@ export const SkSnapshotBubble: FC<
     height,
     16,
     addressee,
-    isLastInExchange ? 0 : 1,
+    isLastInExchange ? 0 : 1
   );
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export const SkSnapshotBubble: FC<
               uri: "data:image/png;base64," + image.encodeToBase64(),
             }}
             aspectRatio={width / height}
-          />,
+          />
         );
       }}
     >

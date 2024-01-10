@@ -1,5 +1,5 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
-import { ConversationListType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { ConversationListType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 import { ElementType } from "react";
 import { View } from "react-native";
 

@@ -1,5 +1,5 @@
-import { AppEventsReducerActionsType } from "@Components/appEvents/reducer/types";
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { AppEventsReducerActionsType } from "@/src/appEvents/reducer/types";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { SkFont, Glyph, SkImage, SkPoint } from "@shopify/react-native-skia";
 import { FlexAlignType, ImageSourcePropType } from "react-native";
 

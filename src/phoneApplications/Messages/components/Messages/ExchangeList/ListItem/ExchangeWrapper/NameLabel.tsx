@@ -1,4 +1,4 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import React, { FC } from "react";
 import { StyleSheet, Text } from "react-native";
 

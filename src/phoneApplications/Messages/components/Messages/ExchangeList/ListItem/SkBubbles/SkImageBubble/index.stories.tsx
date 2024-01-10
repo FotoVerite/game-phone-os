@@ -1,6 +1,6 @@
-import image from "@Components/notifications/NotificationPopupContainer/NotificationPopup/assets/default.jpeg";
-import MediaContextProvider from "@Components/phoneApplications/Messages/context/Media";
-import { MESSAGE_CONTENT } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import image from "@/src/notifications/NotificationPopupContainer/NotificationPopup/assets/default.jpeg";
+import MediaContextProvider from "@/src/phoneApplications/Messages/context/Media";
+import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import { ElementType } from "react";
 import { View } from "react-native";
 

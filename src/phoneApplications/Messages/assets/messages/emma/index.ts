@@ -1,8 +1,8 @@
 import {
   MESSAGE_CONTACT_INFO,
   MESSAGE_CONTACT_NAME,
-} from "@Components/phoneApplications/Messages/constants";
-import { ConversationFileType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+} from "@/src/phoneApplications/Messages/constants";
+import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
 import { your_mom_is_a_cunt } from "./routes/notifications/your_mom_is_a_cunt";
 

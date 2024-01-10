@@ -1,7 +1,7 @@
 import {
   OPTION_EFFECT_TYPE,
   OptionTypeWithDisplayEffect,
-} from "@Components/phoneApplications/Messages/hooks/routes/types";
+} from "@/src/phoneApplications/Messages/hooks/routes/types";
 import React, { FC, useCallback, useEffect, useState } from "react";
 import { TouchableOpacity, View } from "react-native";
 import Animated, {

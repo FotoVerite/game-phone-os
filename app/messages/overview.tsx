@@ -1,37 +1,50 @@
 import { StyleSheet } from "react-native";
 
 import { Text, View } from "@/components/Themed";
-import {
-  MESSAGE_CONTACT_INFO,
-  MESSAGE_CONTACT_NAME,
-} from "@/src/phoneApplications/Messages/constants";
 import { router, useLocalSearchParams } from "expo-router";
 import React, { useState } from "react";
 import ContactCard from "./contact_card";
+import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
+import useDefaults from "./hooks/useDefault";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Overview() {
-  const params = useLocalSearchParams<{
-    contact?: keyof typeof MESSAGE_CONTACT_NAME;
-  }>();
-  const [contact, setContact] = useState(params.contact);
+  const contactFiles = require.context(
+    "../../src/phoneApplications/Messages/assets/messages",
+    true,
+    /\index.ts$/
+  );
+
+  const contactList = useDefaults<ConversationFileType>(contactFiles);
+  const contacts = contactList.reduce(
+    (acc, contact) => {
+      acc[contact.name] = contact;
+      return acc;
+    },
+    {} as { [name: string]: ConversationFileType }
+  );
+
+  const names = contactList.map((contact) => contact.name);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Messages App Overview</Text>
-      <View style={styles.row}>
-        <View style={styles.sidebar}>
-          {Object.entries(MESSAGE_CONTACT_NAME).map(([key, name], id) => (
-            <Text
-              key={`${id}-${key}`}
-              onPress={() => router.setParams({ contact: key })}
-            >
-              {name}
-            </Text>
-          ))}
+    <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
+        <Text style={styles.title}>Messages App Overview</Text>
+        <View style={styles.row}>
+          <View style={styles.sidebar}>
+            {names.map((name, id) => (
+              <Text
+                key={`${id}-${name}`}
+                onPress={() => router.setParams({ contact: name })}
+              >
+                {name}
+              </Text>
+            ))}
+          </View>
+          <ContactCard contactList={contacts} />
         </View>
-        <ContactCard />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 

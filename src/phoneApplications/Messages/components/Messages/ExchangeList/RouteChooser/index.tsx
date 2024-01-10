@@ -1,15 +1,15 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import ConversationEmitter, {
   CONVERSATION_EMITTER_EVENTS,
-} from "@Components/phoneApplications/Messages/emitters";
+} from "@/src/phoneApplications/Messages/emitters";
 import {
   isAvailableRoute,
   isDigestedChoosableRoute,
   isStartedRoute,
-} from "@Components/phoneApplications/Messages/hooks/routes/guards";
-import { DigestedConversationType } from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/types";
-import { CONVERSATION_REDUCER_ACTIONS } from "@Components/phoneApplications/Messages/hooks/useConversation/reducer/type";
-import { ConversationDispatchType } from "@Components/phoneApplications/Messages/hooks/useConversation/types";
+} from "@/src/phoneApplications/Messages/hooks/routes/guards";
+import { DigestedConversationType } from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/types";
+import { CONVERSATION_REDUCER_ACTIONS } from "@/src/phoneApplications/Messages/hooks/useConversation/reducer/type";
+import { ConversationDispatchType } from "@/src/phoneApplications/Messages/hooks/useConversation/types";
 import { BlurView } from "expo-blur";
 import { FC, useState, useEffect, useMemo, useCallback, memo } from "react";
 import { Platform, StyleSheet } from "react-native";

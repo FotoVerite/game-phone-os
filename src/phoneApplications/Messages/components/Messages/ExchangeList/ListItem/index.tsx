@@ -1,9 +1,9 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
-import { EFFECT_TYPE } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { EFFECT_TYPE } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
   isDigestedBubble,
   isDigestedLabel,
-} from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/types";
+} from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/types";
 import { FC, memo, useCallback, useEffect, useState } from "react";
 
 import { useEffectsResolver } from "./EffectsResolver/useBackgroundSnapshot";
@@ -20,7 +20,7 @@ const ListItem: FC<ExchangeListItemType> = (props) => {
     (isResolved: boolean) => {
       _setAsResolved(isResolved);
     },
-    [_setAsResolved],
+    [_setAsResolved]
   );
   const item = useBubbleResolver({ ...props, setAsResolved });
   let bubble: React.JSX.Element;

@@ -1,13 +1,13 @@
 // Description: OP and ZARA discuss OP feelings of alienation.
 // Point: Gives more personality to OP and discuss some central themes.
 
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
-import { MESSAGE_CONTENT } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
   ChoosableRouteType,
   ROUTE_STATUS_TYPE,
-} from "@Components/phoneApplications/Messages/hooks/routes/types";
-import { ExchangeBlockType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+} from "@/src/phoneApplications/Messages/hooks/routes/types";
+import { ExchangeBlockType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
 import { ZARA_ROUTE_IDS } from "./routes";
 

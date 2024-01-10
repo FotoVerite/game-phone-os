@@ -1,9 +1,9 @@
 import {
   MESSAGE_CONTACT_NAME,
   MESSAGE_CONTACT_INFO,
-} from "@Components/phoneApplications/Messages/constants";
-import { MESSAGE_CONTENT } from "@Components/phoneApplications/Messages/hooks/contentWithMetaTypes";
-import { ConversationFileType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+} from "@/src/phoneApplications/Messages/constants";
+import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
 const GREG = MESSAGE_CONTACT_NAME.GREG;
 export const greg: ConversationFileType = {

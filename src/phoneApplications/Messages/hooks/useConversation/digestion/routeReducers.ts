@@ -2,13 +2,13 @@ import {
   isChosenEvent,
   isFinishedRouteEvent,
   isProcessedEvent,
-} from "@Components/appEvents/reducer/guards";
+} from "@/src/appEvents/reducer/guards";
 import {
   MessageAppEventsContainerType,
   MessageAppEventsType,
   MessageRouteEventDataType,
-} from "@Components/appEvents/reducer/types";
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+} from "@/src/appEvents/reducer/types";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { ImageCacheType } from "src/contexts/imageCache/types";
 
 import { convertBlockToMessagePayloadType } from "./convert";
@@ -175,13 +175,10 @@ const digestChoosableRoute = (
   const routeEvent = events.routes[id.toString()];
   const snapshotResolver = resolveSnapshotPayload(cache);
   if (!isChosenEvent(routeEvent)) {
-    const payloads = Object.entries(routes).reduce(
-      (ret, [choice, route]) => {
-        ret[choice] = convertBlockToMessagePayloadType(route);
-        return ret;
-      },
-      {} as { [choice: string]: MessagePayloadType[] }
-    );
+    const payloads = Object.entries(routes).reduce((ret, [choice, route]) => {
+      ret[choice] = convertBlockToMessagePayloadType(route);
+      return ret;
+    }, {} as { [choice: string]: MessagePayloadType[] });
     let options = route.options;
     if (areSimpleOptions(options)) {
       options = options.map((o) => {

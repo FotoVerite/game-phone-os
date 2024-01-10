@@ -1,9 +1,9 @@
 import {
   MESSAGE_CONTACT_INFO,
   MESSAGE_CONTACT_NAME,
-} from "@Components/phoneApplications/Messages/constants";
-import { ROUTE_STATUS_TYPE } from "@Components/phoneApplications/Messages/hooks/routes/types";
-import { ConversationFileType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+} from "@/src/phoneApplications/Messages/constants";
+import { ROUTE_STATUS_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
+import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 import { produce } from "immer";
 
 import { what_is_with_this_serial_killer_bullshit } from "./choosable/antagonist_what_is_with_this_serial_killer_bullshit";

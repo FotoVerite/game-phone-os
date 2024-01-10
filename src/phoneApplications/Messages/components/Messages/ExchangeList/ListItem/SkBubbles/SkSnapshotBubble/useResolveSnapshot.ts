@@ -1,10 +1,10 @@
-import { ImageDigestionPropsType } from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/types";
+import { ImageDigestionPropsType } from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/types";
 import {
   CONVERSATION_REDUCER_ACTIONS,
   ConversationReducerActionsType,
-} from "@Components/phoneApplications/Messages/hooks/useConversation/reducer/type";
-import { useSnapshotContext } from "@Components/snapShot/context";
-import { SNAPSHOT_TYPES } from "@Components/snapShot/context/type";
+} from "@/src/phoneApplications/Messages/hooks/useConversation/reducer/type";
+import { useSnapshotContext } from "@/src/snapShot/context";
+import { SNAPSHOT_TYPES } from "@/src/snapShot/context/type";
 import { SkImage } from "@shopify/react-native-skia";
 import { useEffect, useRef } from "react";
 
@@ -12,7 +12,7 @@ export const useSnapshotResolver = (
   content: ImageDigestionPropsType,
   dispatch: (action: ConversationReducerActionsType) => void,
   ID: string,
-  width: number,
+  width: number
 ) => {
   const context = useSnapshotContext();
   const { image, setTakeSnapShot } = context;

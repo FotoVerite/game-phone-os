@@ -1,7 +1,7 @@
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import ConversationEmitter, {
   CONVERSATION_EMITTER_EVENTS,
-} from "@Components/phoneApplications/Messages/emitters";
+} from "@/src/phoneApplications/Messages/emitters";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { BlurView } from "expo-blur";
 import React, { FC } from "react";
@@ -31,7 +31,7 @@ const Header: FC<{
       backgroundColor: interpolateColor(
         shrink.value,
         [0, 1],
-        ["transparent", "#7878784f"],
+        ["transparent", "#7878784f"]
       ),
       transform: [{ scale: interpolate(shrink.value, [0, 1], [1, 0.97]) }],
     };

@@ -1,12 +1,12 @@
 // Description: OP and his brother discuss a reddit creepypaste/rumor.
 // Point: Give context for the setting of the game and set tone of the horror. Also so how fractured his family is
 
-import { MESSAGE_CONTACT_NAME } from "@Components/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import {
   ChoosableRouteType,
   ROUTE_STATUS_TYPE,
-} from "@Components/phoneApplications/Messages/hooks/routes/types";
-import { ExchangeBlockType } from "@Components/phoneApplications/Messages/hooks/useConversations/types";
+} from "@/src/phoneApplications/Messages/hooks/routes/types";
+import { ExchangeBlockType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
 import { LENNY_ROUTE_IDS } from "../routes";
 

@@ -1,8 +1,8 @@
 import {
   BubbleItemType,
   DigestedConversationListItem,
-} from "@Components/phoneApplications/Messages/hooks/useConversation/digestion/types";
-import { ConversationDispatchType } from "@Components/phoneApplications/Messages/hooks/useConversation/types";
+} from "@/src/phoneApplications/Messages/hooks/useConversation/digestion/types";
+import { ConversationDispatchType } from "@/src/phoneApplications/Messages/hooks/useConversation/types";
 import { SharedValue } from "react-native-gesture-handler/lib/typescript/handlers/gestures/reanimatedWrapper";
 import Animated from "react-native-reanimated";
 

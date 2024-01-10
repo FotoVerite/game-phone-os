@@ -3,7 +3,7 @@ import {
   OptionType,
   OptionTypeWithDisplayEffect,
   OptionTypeWithShaderEffect,
-} from "@Components/phoneApplications/Messages/hooks/routes/types";
+} from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 export const isOptionDisplayEffect = (
   option: OptionType

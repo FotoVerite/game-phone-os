@@ -1,10 +1,10 @@
-import { useAppEventsContext } from "@Components/appEvents/context";
-import { hasLogline } from "@Components/appEvents/reducer/guards";
+import { useAppEventsContext } from "@/src/appEvents/context";
+import { hasLogline } from "@/src/appEvents/reducer/guards";
 import {
   APP_EVENTS_ACTIONS,
   MessageAppEventsContainerType,
   MessageRouteEventDataType,
-} from "@Components/appEvents/reducer/types";
+} from "@/src/appEvents/reducer/types";
 import { useMemo, useEffect, useState } from "react";
 
 import { MESSAGE_CONTACT_NAME } from "../../constants";

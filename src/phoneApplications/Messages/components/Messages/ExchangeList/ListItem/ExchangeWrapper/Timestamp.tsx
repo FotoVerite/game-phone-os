@@ -1,4 +1,4 @@
-import { formatConversationTime } from "@Components/phoneApplications/Messages/hooks/useConversations/determineLogLine";
+import { formatConversationTime } from "@/src/phoneApplications/Messages/hooks/useConversations/determineLogLine";
 import React, { FC } from "react";
 import { LayoutChangeEvent, Text } from "react-native";
 import Animated, {

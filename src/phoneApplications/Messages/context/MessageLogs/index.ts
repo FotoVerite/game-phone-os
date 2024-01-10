@@ -1,4 +1,4 @@
-import { CACHED_KEYS } from "@Components/Main/CacheLoader/types";
+import { CACHED_KEYS } from "@/src/Main/CacheLoader/types";
 import { SkImage } from "@shopify/react-native-skia";
 import React, { FC, useCallback, useContext, useEffect, useState } from "react";
 import { LOG, LOG_COLORS } from "src/utility/logger";
@@ -17,8 +17,7 @@ const MessageLogsContext = React.createContext<
 const convertMessageLogToJSON = (cache: MessageLogsType) =>
   JSON.stringify(Object.keys(cache));
 
-const MessageLogsContextProvider: FC<  MessageLogsContextProvider,
-> = ({
+const MessageLogsContextProvider: FC<MessageLogsContextProvider> = ({
   children,
 }) => {
   const [images, setImages] = useState<MessageLogType>();
