@@ -1,12 +1,13 @@
-import { StyleSheet } from "react-native";
-
-import { Text, View } from "@/components/Themed";
 import { router, useLocalSearchParams } from "expo-router";
 import React, { useState } from "react";
-import ContactCard from "./contact_card";
-import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
-import useDefaults from "./hooks/useDefault";
+import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+
+import ContactCard from "./contact_card";
+import useDefaults from "./hooks/useDefault";
+
+import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
+import { Text } from "tamagui";
 
 export default function Overview() {
   const contactFiles = require.context(

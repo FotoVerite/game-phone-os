@@ -1,10 +1,12 @@
+import { Text, View } from "@tamagui/core";
 import { useLocalSearchParams } from "expo-router";
-import { Text, View } from "react-native";
+import React from "react";
 
 import useDefaults from "../hooks/useDefault";
 
 import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 import baseStyles from "@/src/styles";
+import { XStack, YStack } from "tamagui";
 
 export default function Routes() {
   const { id } = useLocalSearchParams<{ id: string }>();

@@ -1,17 +1,20 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import {
-  DarkTheme,
-  DefaultTheme,
   ThemeProvider,
+  DefaultTheme,
+  DarkTheme,
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { TamaguiProvider, Text, Theme } from "tamagui";
 
 import { useColorScheme } from "@/components/useColorScheme";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import tamaguiConfig from "@/tamagui.config";
 
+// some nice defaults:
 export {
   // Catch any errors thrown by the Layout component.
   ErrorBoundary,
@@ -48,15 +51,24 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+    <TamaguiProvider config={tamaguiConfig}>
       <SafeAreaProvider>
-        <Stack initialRouteName="messages">
-          <Stack.Screen
-            name="messages"
-            options={{ presentation: "fullScreenModal", headerShown: false }}
-          />
-        </Stack>
+        <Theme name={colorScheme}>
+          <ThemeProvider
+            value={colorScheme === "light" ? DefaultTheme : DarkTheme}
+          >
+            <Stack initialRouteName="messages">
+              <Stack.Screen
+                name="messages"
+                options={{
+                  presentation: "fullScreenModal",
+                  headerShown: false,
+                }}
+              />
+            </Stack>
+          </ThemeProvider>
+        </Theme>
       </SafeAreaProvider>
-    </ThemeProvider>
+    </TamaguiProvider>
   );
 }

@@ -1,10 +1,9 @@
-import { StyleSheet, Text, View } from "react-native";
 import { Image } from "expo-image";
-
+import { LinearGradient } from "expo-linear-gradient";
 import { Link, router, useLocalSearchParams } from "expo-router";
 import { FC, useState } from "react";
-import { LinearGradient } from "expo-linear-gradient";
-import { theme } from "@/src/theme";
+import { StyleSheet, Text, View } from "react-native";
+
 import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
 const totalRoutes = (n = 0, c = 0) => n + c;
@@ -30,11 +29,11 @@ const ContactCard: FC<{
         <LinearGradient
           colors={info.colors || []}
           style={{
-            width: theme.spacing.p1,
+            width: 24,
             height: "100%",
-            marginEnd: theme.spacing.p1,
+            marginEnd: 12,
           }}
-        ></LinearGradient>
+        />
         <View>
           <Text style={styles.title}>{info.full_name}</Text>
           <Text style={styles.title}>Contact Displays: {info.name}</Text>
@@ -90,7 +89,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
-    marginBottom: theme.spacing.p2,
+    marginBottom: 24,
   },
   row: {
     flex: 1,
