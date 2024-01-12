@@ -6,7 +6,6 @@ import useDefaults from "../hooks/useDefault";
 
 import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 import baseStyles from "@/src/styles";
-import { XStack, YStack } from "tamagui";
 
 export default function Routes() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -17,7 +16,7 @@ export default function Routes() {
     /\index.ts$/
   );
 
-  const contactList = useDefaults<ConversationFileType>(contactFiles);
+  const [contactList] = useDefaults<ConversationFileType>(contactFiles);
   const contacts = contactList.reduce(
     (acc, contact) => {
       acc[contact.name] = contact;

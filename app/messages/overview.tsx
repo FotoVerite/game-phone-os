@@ -1,70 +1,41 @@
-import { router, useLocalSearchParams } from "expo-router";
-import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import React from "react";
+import { H1, XStack, YStack } from "tamagui";
 
-import ContactCard from "./contact_card";
-import useDefaults from "./hooks/useDefault";
+import ErrorBox from "@/src/web/ErrorBox";
+import SiteContainer from "@/src/web/SiteContainer";
+import ConversationSideBar from "@/src/web/messages/ContactSideBar";
+import ConversationFilesProvider, {
+  ConversationFilesStoreType,
+} from "@/src/web/messages/ConversationFilesProvider";
+import { useInfoContext } from "@/src/web/messages/contexts/InfoContext";
 
-import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
-import { Text } from "tamagui";
-
-export default function Overview() {
-  const contactFiles = require.context(
-    "../../src/phoneApplications/Messages/assets/messages",
-    true,
-    /\index.ts$/
-  );
-
-  const contactList = useDefaults<ConversationFileType>(contactFiles);
-  const contacts = contactList.reduce(
-    (acc, contact) => {
-      acc[contact.name] = contact;
-      return acc;
-    },
-    {} as { [name: string]: ConversationFileType }
-  );
-
-  const names = contactList.map((contact) => contact.name);
-
+function FileImportErrors() {
+  const store = useInfoContext<ConversationFilesStoreType>();
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Messages App Overview</Text>
-        <View style={styles.row}>
-          <View style={styles.sidebar}>
-            {names.map((name, id) => (
-              <Text
-                key={`${id}-${name}`}
-                onPress={() => router.setParams({ contact: name })}
-              >
-                {name}
-              </Text>
-            ))}
-          </View>
-          <ContactCard contactList={contacts} />
-        </View>
-      </View>
-    </SafeAreaView>
+    <ErrorBox
+      title="There Are Errors in imported Messages"
+      errors={store().errors}
+    />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  row: {
-    flex: 1,
-    flexDirection: "row",
-  },
-  sidebar: { flex: 1 },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-});
+export default function Overview() {
+  return (
+    <ConversationFilesProvider>
+      <SiteContainer>
+        <YStack f={1}>
+          <YStack>
+            <H1 pb="$2" ta="center">
+              Messages App Overview
+            </H1>
+            <FileImportErrors />
+          </YStack>
+          <XStack f={1}>
+            <ConversationSideBar />
+            {/* <ContactCard contactList={contacts} /> */}
+          </XStack>
+        </YStack>
+      </SiteContainer>
+    </ConversationFilesProvider>
+  );
+}

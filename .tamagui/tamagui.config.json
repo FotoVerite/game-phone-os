@@ -21399,7 +21399,6 @@
     "onlyAllowShorthands": false,
     "fontLanguages": [],
     "animations": {
-      "isReactNative": true,
       "animations": {
         "bouncy": {
           "type": "spring",
@@ -21419,13 +21418,12 @@
           "stiffness": 250
         }
       },
-      "View": "Component",
-      "Text": "Component",
+      "usePresence": "Function",
+      "ResetPresence": "Function",
+      "supportsCSSVars": true,
       "useAnimatedNumber": "Function",
       "useAnimatedNumberReaction": "Function",
       "useAnimatedNumberStyle": "Function",
-      "usePresence": "Function",
-      "ResetPresence": "Function",
       "useAnimations": "Function"
     },
     "media": {

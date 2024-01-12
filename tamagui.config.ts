@@ -1,11 +1,15 @@
-import { createAnimations } from "@tamagui/animations-react-native";
+import { createAnimations } from "@tamagui/animations-css";
+import { createAnimations as createReanimatedAnimations } from "@tamagui/animations-react-native";
 import { createInterFont } from "@tamagui/font-inter";
 import { createMedia } from "@tamagui/react-native-media-driver";
 import { shorthands } from "@tamagui/shorthands";
 import { themes, tokens } from "@tamagui/themes";
+import { Platform } from "react-native";
 import { createTamagui } from "tamagui";
 
-const animations = createAnimations({
+let animations;
+
+const ANIMATIONS = {
   bouncy: {
     type: "spring",
     damping: 10,
@@ -23,7 +27,13 @@ const animations = createAnimations({
     mass: 1.2,
     stiffness: 250,
   },
-});
+} as const;
+
+if (Platform.OS === "web") {
+  animations = createAnimations(ANIMATIONS);
+} else {
+  animations = createReanimatedAnimations(ANIMATIONS);
+}
 
 const headingFont = createInterFont();
 const bodyFont = createInterFont();

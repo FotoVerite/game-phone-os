@@ -1,10 +1,11 @@
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link, router, useLocalSearchParams } from "expo-router";
-import { FC, useState } from "react";
+import React, { FC, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
+//import GradientWithHorizontalFade from "@/src/web/styles/GriadientWithHorizontalFade";
 
 const totalRoutes = (n = 0, c = 0) => n + c;
 const ContactCard: FC<{
@@ -26,14 +27,11 @@ const ContactCard: FC<{
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <LinearGradient
-          colors={info.colors || []}
-          style={{
-            width: 24,
-            height: "100%",
-            marginEnd: 12,
-          }}
-        />
+        {/* <GradientWithHorizontalFade
+          colors={info.colors}
+          containerStyles={{ w: 48, mr: 12 }}
+        /> */}
+
         <View>
           <Text style={styles.title}>{info.full_name}</Text>
           <Text style={styles.title}>Contact Displays: {info.name}</Text>
@@ -92,7 +90,6 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   row: {
-    flex: 1,
     flexDirection: "row",
   },
   separator: {
