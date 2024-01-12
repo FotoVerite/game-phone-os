@@ -1,6 +1,7 @@
 import React from "react";
 import { H1, XStack, YStack } from "tamagui";
 
+import ContactCard from "./contact_card";
 import ErrorBox from "@/src/web/ErrorBox";
 import SiteContainer from "@/src/web/SiteContainer";
 import ConversationSideBar from "@/src/web/messages/ContactSideBar";
@@ -32,7 +33,7 @@ export default function Overview() {
           </YStack>
           <XStack f={1}>
             <ConversationSideBar />
-            {/* <ContactCard contactList={contacts} /> */}
+            <ContactCard />
           </XStack>
         </YStack>
       </SiteContainer>

@@ -21,6 +21,7 @@ const ZARA = MESSAGE_CONTACT_NAME.ZARA;
 const zara: ConversationFileType = {
   name: ZARA,
   tags: [ZARA, "Zara", "Hopescope", "Panopticon", "Ads", "Money"],
+  colors: MESSAGE_CONTACT_INFO[ZARA].colors,
   heroImage: MESSAGE_CONTACT_INFO[ZARA].avatar,
   interfaceColor: MESSAGE_CONTACT_INFO[ZARA].colors[0],
   notificationRoutes: [

@@ -1,20 +1,21 @@
 import { Image } from "expo-image";
-import { LinearGradient } from "expo-linear-gradient";
-import { Link, router, useLocalSearchParams } from "expo-router";
-import React, { FC, useState } from "react";
+import { Link, useLocalSearchParams } from "expo-router";
+import React, { FC } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
-//import GradientWithHorizontalFade from "@/src/web/styles/GriadientWithHorizontalFade";
+import { ConversationFilesStoreType } from "@/src/web/messages/ConversationFilesProvider";
+import GradientWithHorizontalFade from "@/src/web/messages/GradientWithHorizontalFade";
+import { useInfoContext } from "@/src/web/messages/contexts/InfoContext";
+import { H2, H3, XStack } from "tamagui";
 
 const totalRoutes = (n = 0, c = 0) => n + c;
-const ContactCard: FC<{
-  contactList: { [key: string]: ConversationFileType };
-}> = ({ contactList }) => {
+const ContactCard: FC = () => {
   const { contact } = useLocalSearchParams<{
     contact?: string;
   }>();
+  const store = useInfoContext<ConversationFilesStoreType>();
 
+  const contacts = store().contacts;
   if (!contact) {
     return <></>;
   }
@@ -22,19 +23,19 @@ const ContactCard: FC<{
   const blurhash =
     "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
-  const info = contactList[contact];
+  const info = contacts[contact];
 
   return (
     <View style={styles.container}>
-      <View style={styles.row}>
-        {/* <GradientWithHorizontalFade
+      <XStack f={1}>
+        <GradientWithHorizontalFade
           colors={info.colors}
           containerStyles={{ w: 48, mr: 12 }}
-        /> */}
+        />
 
         <View>
-          <Text style={styles.title}>{info.full_name}</Text>
-          <Text style={styles.title}>Contact Displays: {info.name}</Text>
+          <H2 style={styles.title}>{info.full_name}</H2>
+          <H3 style={styles.title}>Contact Displays: {info.name}</H3>
           <View>
             <View
               style={{
@@ -73,7 +74,7 @@ const ContactCard: FC<{
             </Link>
           </View>
         </View>
-      </View>
+      </XStack>
     </View>
   );
 };
@@ -83,6 +84,9 @@ export default ContactCard;
 const styles = StyleSheet.create({
   container: {
     flex: 4,
+    borderRadius: 24,
+    borderColor: "red",
+    borderWidth: 1,
   },
   title: {
     fontSize: 20,
@@ -90,6 +94,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   row: {
+    flex: 1,
     flexDirection: "row",
   },
   separator: {

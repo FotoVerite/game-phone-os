@@ -5,8 +5,10 @@ import { View } from "tamagui";
 
 const SiteContainer: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <SafeAreaView>
-      <View padding={Platform.OS === "web" ? 24 : 0}>{children}</View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View f={1} padding={Platform.OS === "web" ? 24 : 0}>
+        {children}
+      </View>
     </SafeAreaView>
   );
 };

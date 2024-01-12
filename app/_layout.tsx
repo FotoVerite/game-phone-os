@@ -53,8 +53,8 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
-    <TamaguiProvider config={tamaguiConfig}>
-      <SafeAreaProvider>
+    <SafeAreaProvider>
+      <TamaguiProvider config={tamaguiConfig}>
         <Theme name={colorScheme}>
           <ThemeProvider
             value={colorScheme === "light" ? DefaultTheme : DarkTheme}
@@ -70,7 +70,7 @@ function RootLayoutNav() {
             </Stack>
           </ThemeProvider>
         </Theme>
-      </SafeAreaProvider>
-    </TamaguiProvider>
+      </TamaguiProvider>
+    </SafeAreaProvider>
   );
 }
