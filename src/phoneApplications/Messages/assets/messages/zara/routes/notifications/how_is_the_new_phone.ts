@@ -1,14 +1,15 @@
+import { TO_SELF_IDS } from "../../../toSelf/routes/routes";
+import { ZARA_ROUTE_IDS } from "../routes";
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import {
   NotificationRouteFileType,
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import { ZARA_ROUTE_IDS } from "../routes";
-import { TO_SELF_IDS } from "../../../toSelf/routes/routes";
-
 export const how_is_the_phone_coming: NotificationRouteFileType = {
   id: ZARA_ROUTE_IDS.HOW_IS_THE_PHONE_COMING,
+  name: "How's the Phone?",
+  description: "Zara ask PO how he is liking his new phone",
   delay: 1000,
   conditions: {
     [MESSAGE_CONTACT_NAME.MY_SELF]: {

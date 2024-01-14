@@ -14,13 +14,13 @@ const ConversationFilesProvider: FC<PropsWithChildren> = ({ children }) => {
   const contactFiles = require.context(
     "../../../phoneApplications/Messages/assets/messages",
     true,
-    /\index.ts$/
+    /\index.ts|index.tsx$/
   );
 
   const [contactList, errors] = useDefaults<ConversationFileType>(contactFiles);
   const contacts = contactList.reduce(
     (acc, contact) => {
-      acc[contact.name] = contact;
+      acc[contact.full_name] = contact;
       return acc;
     },
     {} as { [name: string]: ConversationFileType }

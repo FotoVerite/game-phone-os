@@ -1,5 +1,6 @@
-import { MESSAGE_CONTACT_NAME, MESSAGE_CONTACT_INFO } from "../../../constants";
-import { ConversationFileType } from "../../../hooks/useConversations/types";
+import React from "react";
+import { Text } from "tamagui";
+
 import { i_dont_know_what_to_do_with_myself } from "./routes/I_really_dont_know_what_to_do_with_myself";
 import { spammer_is_being_weird } from "./routes/after_weirdness_starts/spammer_is_being_weird";
 import { borked_phone } from "./routes/borked_phone";
@@ -15,13 +16,20 @@ import { my_bro_is_being_annoying } from "./routes/my_bro_is_being_annoying";
 import { how_is_the_phone_coming } from "./routes/notifications/how_is_the_new_phone";
 import { update_on_the_phone } from "./routes/notifications/update_on_phone";
 import { your_day_worse_then_mine } from "./routes/notifications/your_day_worse_then_mine";
+import { MESSAGE_CONTACT_NAME, MESSAGE_CONTACT_INFO } from "../../../constants";
+import { ConversationFileType } from "../../../hooks/useConversations/types";
 
 const ZARA = MESSAGE_CONTACT_NAME.ZARA;
 
 const zara: ConversationFileType = {
   name: ZARA,
+  full_name: "Zara Benham",
   tags: [ZARA, "Zara", "Hopescope", "Panopticon", "Ads", "Money"],
   colors: MESSAGE_CONTACT_INFO[ZARA].colors,
+  description: [
+    `Successful beauty/skincare youtuber in the style of hopescope/cassandra bankson. Perky and outgoing and drawn to drama. Best friends with PO and dislikes Michael.`,
+  ],
+  age: 37,
   heroImage: MESSAGE_CONTACT_INFO[ZARA].avatar,
   interfaceColor: MESSAGE_CONTACT_INFO[ZARA].colors[0],
   notificationRoutes: [

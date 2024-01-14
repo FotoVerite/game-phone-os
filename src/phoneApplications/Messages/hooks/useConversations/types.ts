@@ -67,4 +67,9 @@ export type ConversationFileType = Omit<
   | "logline_content"
   | "logline_timestamp"
   | "availableEventRoutes"
-> & { full_name?: string; description?: ReactElement; colors?: string[] };
+> & {
+  age?: number;
+  full_name: string;
+  description?: ReactElement | string[];
+  colors?: string[];
+};

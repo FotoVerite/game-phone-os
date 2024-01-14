@@ -58,6 +58,9 @@ export type RouteConditionsType = {
 
 export interface AbstractRouteType {
   id: number;
+  name?: string;
+  description?: string;
+  purpose?: string;
   conditions?: RouteConditionsType | RouteConditionsType[];
   delay?: number;
   effects?: MessageEffectType[];

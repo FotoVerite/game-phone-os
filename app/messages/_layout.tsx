@@ -1,15 +1,38 @@
-import { Stack } from "expo-router";
+import { Stack, useGlobalSearchParams } from "expo-router";
+import React from "react";
 
-import { useColorScheme } from "@/components/useColorScheme";
+import SiteContainer from "@/src/web/SiteContainer";
+import ConversationFilesProvider from "@/src/web/messages/ConversationFilesProvider";
 
 export default function MessagesLayout() {
-  const colorScheme = useColorScheme();
+  const { id } = useGlobalSearchParams<{
+    id?: string;
+  }>();
+
   return (
-    <Stack initialRouteName="messages">
-      <Stack.Screen
-        name="overview"
-        options={{ presentation: "fullScreenModal", headerShown: false }}
-      />
-    </Stack>
+    <ConversationFilesProvider>
+      <SiteContainer>
+        <Stack initialRouteName="messages">
+          <Stack.Screen
+            name="overview"
+            options={{ presentation: "fullScreenModal", headerShown: false }}
+          />
+          <Stack.Screen
+            name="contacts/[id]"
+            options={{
+              headerBackVisible: true,
+              headerTitle: `Contact: ${id}`,
+            }}
+          />
+          <Stack.Screen
+            name="routes/[id]"
+            options={{
+              headerBackVisible: true,
+              headerTitle: `Routes For: ${id}`,
+            }}
+          />
+        </Stack>
+      </SiteContainer>
+    </ConversationFilesProvider>
   );
 }

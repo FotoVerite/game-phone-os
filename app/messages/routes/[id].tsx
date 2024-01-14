@@ -1,34 +1,44 @@
-import { Text, View } from "@tamagui/core";
+import { Activity, Airplay } from "@tamagui/lucide-icons";
 import { useLocalSearchParams } from "expo-router";
 import React from "react";
+import { XGroup, Button, YStack, Text } from "tamagui";
 
-import useDefaults from "../hooks/useDefault";
-
-import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
-import baseStyles from "@/src/styles";
+import { ConversationFilesStoreType } from "@/src/web/messages/ConversationFilesProvider";
+import { useInfoContext } from "@/src/web/messages/contexts/InfoContext";
+import RouteInformation from "@/src/web/messages/routes/RouteInfomation";
 
 export default function Routes() {
-  const { id } = useLocalSearchParams<{ id: string }>();
-
-  const contactFiles = require.context(
-    "../../../src/phoneApplications/Messages/assets/messages",
-    true,
-    /\index.ts$/
-  );
-
-  const [contactList] = useDefaults<ConversationFileType>(contactFiles);
-  const contacts = contactList.reduce(
-    (acc, contact) => {
-      acc[contact.name] = contact;
-      return acc;
-    },
-    {} as { [name: string]: ConversationFileType }
-  );
-
+  const { id } = useLocalSearchParams<{
+    id?: string;
+  }>();
+  const store = useInfoContext<ConversationFilesStoreType>();
+  const contacts = store().contacts;
+  if (!id) {
+    return <></>;
+  }
+  const info = contacts[id];
   return (
-    <View style={[baseStyles.center]}>
-      <Text>Routes for: {id}</Text>
-      <Text>{contacts[id].routes.length}</Text>
-    </View>
+    <YStack padding="$2" alignItems="center">
+      <XGroup size="$4">
+        <XGroup.Item>
+          <Button size="$8" icon={Activity}>
+            <Text>Notifications {info.notificationRoutes?.length}</Text>
+          </Button>
+        </XGroup.Item>
+        <XGroup.Item>
+          <Button size="$8" icon={Airplay}>
+            <Text>Choosable {info.routes.length}</Text>
+          </Button>
+        </XGroup.Item>
+      </XGroup>
+
+      {info.notificationRoutes?.map((r) => (
+        <RouteInformation
+          colors={info.colors || ["black", "black"]}
+          route={r}
+          key={`route-${r.id}`}
+        />
+      ))}
+    </YStack>
   );
 }
