@@ -40,10 +40,6 @@ const outputDescription = (description?: string[] | ReactElement<Text>) => {
   return <View mt="$2">{description}</View>;
 };
 
-const routeNumber = (info: ConversationFileType) => {
-  return (info.notificationRoutes?.length || 0) + info.routes.length;
-};
-
 const RouteInformation: FC<{ colors: string[]; route: AbstractRouteType }> = ({
   colors,
   route,
