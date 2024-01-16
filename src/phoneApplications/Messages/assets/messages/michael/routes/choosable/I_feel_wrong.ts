@@ -1,3 +1,5 @@
+import { ROUTE_IDS_MICHAEL_MYERS } from "../routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
@@ -5,8 +7,6 @@ import {
   OPTION_EFFECT_TYPE,
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
-
-import { MICHAEL_IDS } from "../routes";
 
 export enum I_FEEL_WRONG_OPTIONS {
   A = "Michael, I don't feel sexy",
@@ -17,7 +17,7 @@ export enum I_FEEL_WRONG_OPTIONS {
 const SELF = MESSAGE_CONTACT_NAME.SELF;
 
 export const i_feel_wrong: ChoosableRouteType = {
-  id: MICHAEL_IDS.I_FEEL_WRONG,
+  id: ROUTE_IDS_MICHAEL_MYERS.PROTOG_I_FEEL_WRONG,
   options: [
     {
       label: I_FEEL_WRONG_OPTIONS.A,
@@ -42,7 +42,7 @@ export const i_feel_wrong: ChoosableRouteType = {
   conditions: {
     [MESSAGE_CONTACT_NAME.MICHAEL]: {
       routes: {
-        [MICHAEL_IDS.ABOUT_TONIGHT_REPLY]: {
+        [ROUTE_IDS_MICHAEL_MYERS.PROTAG_REPLY_TO_ABOUT_TONIGHT]: {
           status: ROUTE_STATUS_TYPE.FINISHED,
         },
       },

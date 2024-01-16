@@ -1,6 +1,9 @@
 // Description: OP and his brother discuss a reddit creepypaste/rumor.
 // Point: Give context for the setting of the game and set tone of the horror. Also so how fractured his family is
 
+import { ROUTE_IDS_CAT_FACTS } from "../../../cat_facts/routes/routes";
+import { ROUTE_IDS_LENNY } from "../routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
@@ -8,22 +11,23 @@ import {
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import { CAT_FACT_IDS } from "../../../cat_facts/routes/routes";
-import { LENNY_ROUTE_IDS } from "../routes";
-
 const SELF = MESSAGE_CONTACT_NAME.SELF;
 
-enum OPTIONS {
+enum OPTIONS_LEONARD_PROTAG_BECAUSE_YOU_THINK_ITS_FUNNY {
   A = "Because you think it's funny",
 }
+const OPTIONS = OPTIONS_LEONARD_PROTAG_BECAUSE_YOU_THINK_ITS_FUNNY;
 
 export const because_you_think_its_funny: ChoosableRouteType = {
-  id: LENNY_ROUTE_IDS.BECAUSE_YOU_THINK_ITS_FUNNY,
+  id: ROUTE_IDS_LENNY.PROTOG_BECAUSE_YOU_THINK_ITS_FUNNY,
   options: Object.values(OPTIONS),
+  name: "Because you think it's funny",
+  purpose:
+    "Shows that Protagonist doesn't trust Lenny and think he'll send stupid pranks",
   conditions: {
     [MESSAGE_CONTACT_NAME.LENNY]: {
       routes: {
-        [LENNY_ROUTE_IDS.WHY_AM_I_GETTING_CAT_FACTS]: {
+        [ROUTE_IDS_LENNY.PROTAG_WHY_AM_I_GETTING_CAT_FACTS]: {
           status: ROUTE_STATUS_TYPE.FINISHED,
         },
       },
@@ -42,7 +46,7 @@ export const because_you_think_its_funny: ChoosableRouteType = {
             conditions: {
               [MESSAGE_CONTACT_NAME.CAT_FACTS]: {
                 routes: {
-                  [CAT_FACT_IDS.CLOWDER_OF_CATS]: {
+                  [ROUTE_IDS_CAT_FACTS.NOTIFICATION_CLOWDER_OF_CATS]: {
                     status: ROUTE_STATUS_TYPE.FINISHED,
                   },
                 },

@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { ImageSourcePropType } from "react-native";
 
 import { MESSAGE_CONTACT_NAME } from "../../constants";
@@ -10,7 +11,6 @@ import {
   NotificationRouteFileType,
   RouteConditionsType,
 } from "../routes/types";
-import { ReactElement } from "react";
 
 export type MessageContentType = string | ContentWithMetaType;
 
@@ -29,6 +29,8 @@ export type ConversationType = {
   blockable?: boolean | { conditions: RouteConditionsType };
   blocked?: boolean;
   conditions?: RouteConditionsType;
+  full_name: MESSAGE_CONTACT_NAME;
+  displayName: string;
   effects?: MessageEffectType[];
   notificationRoutes?: NotificationRouteFileType[];
   exchanges: ConversationExchangeType[];
@@ -37,9 +39,8 @@ export type ConversationType = {
   heroImage: ImageSourcePropType;
   interfaceColor: string;
   leaveAsDelivered?: boolean;
-  logline_content: string;
-  logline_timestamp: string;
-  name: MESSAGE_CONTACT_NAME;
+  loglineContent: string;
+  loglineTimestamp: string;
   routes: ChoosableRouteType[];
   tags: string[];
 };
@@ -53,9 +54,9 @@ export type ConversationListType = Pick<
   | "heroImage"
   | "hasAvailableRoute"
   | "interfaceColor"
-  | "name"
-  | "logline_timestamp"
-  | "logline_content"
+  | "displayName"
+  | "loglineTimestamp"
+  | "loglineContent"
   | "tags"
 >;
 
@@ -64,12 +65,12 @@ export type ConversationListItemType = Omit<ConversationListType, "tags">;
 export type ConversationFileType = Omit<
   ConversationType,
   | "hasAvailableRoute"
-  | "logline_content"
-  | "logline_timestamp"
+  | "loglineContent"
+  | "loglineTimestamp"
   | "availableEventRoutes"
 > & {
   age?: number;
-  full_name: string;
   description?: ReactElement | string[];
-  colors?: string[];
+  colors: string[];
+  phoneNumber: string;
 };

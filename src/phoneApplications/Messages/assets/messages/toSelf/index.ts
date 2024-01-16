@@ -1,18 +1,23 @@
-import {
-  MESSAGE_CONTACT_INFO,
-  MESSAGE_CONTACT_NAME,
-} from "@/src/phoneApplications/Messages/constants";
-import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 import moment from "moment";
 
 import { check_if_txt_is_working } from "./routes/check_if_txt_is_working";
 
-const SELF = MESSAGE_CONTACT_NAME.SELF;
+import {
+  DEFAULT_CONVERSATION_INFO,
+  MESSAGE_CONTACT_NAME,
+} from "@/src/phoneApplications/Messages/constants";
+import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
+
+const SELF = MESSAGE_CONTACT_NAME.PROTAGONIST;
 export const toSelf: ConversationFileType = {
+  full_name: "Protagonist",
   name: MESSAGE_CONTACT_NAME.MY_SELF,
   tags: [SELF],
-  heroImage: MESSAGE_CONTACT_INFO[SELF].avatar,
-  interfaceColor: MESSAGE_CONTACT_INFO[SELF].colors[0],
+  colors: ["blue", "#363243"],
+  phone_number: "(315)-242-2424",
+  age: 39,
+  heroImage: DEFAULT_CONVERSATION_INFO.avatar,
+  interfaceColor: "blue",
   leaveAsDelivered: true,
   notificationRoutes: [],
   routes: [check_if_txt_is_working],

@@ -1,19 +1,20 @@
+import { ROUTE_IDS_LENNY } from "../routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import {
   NotificationRouteFileType,
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import { LENNY_ROUTE_IDS } from "../routes";
-
 export const my_ahri_build: NotificationRouteFileType = {
-  id: LENNY_ROUTE_IDS.WHATS_GOING_ON,
+  id: ROUTE_IDS_LENNY.NOTIFICATION_WHAT_IS_GOING_ON,
+  description: "Lenny is worried about his brother",
   delay: 12000,
   conditions: [
     {
       [MESSAGE_CONTACT_NAME.LENNY]: {
         routes: {
-          [LENNY_ROUTE_IDS.NO_IDEA]: {
+          [ROUTE_IDS_LENNY.I_HAVE_NO_IDEA]: {
             status: ROUTE_STATUS_TYPE.FINISHED,
           },
         },

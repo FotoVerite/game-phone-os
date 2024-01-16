@@ -1,7 +1,7 @@
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { ROUTE_STATUS_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import { SPAM1_IDS } from "../../spam1/routes/routes";
+import { SPAM1_IDS } from "../../antagonist_first_number/routes/routes";
 import { ZARA_ROUTE_IDS } from "../../zara/routes/routes";
 import { ANTAGONIST_IF_BLOCKED } from "../routes/routes";
 

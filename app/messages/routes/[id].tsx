@@ -1,13 +1,18 @@
 import { Activity, Airplay } from "@tamagui/lucide-icons";
 import { useLocalSearchParams } from "expo-router";
-import React from "react";
+import React, { useState } from "react";
 import { XGroup, Button, YStack, Text } from "tamagui";
+import { create } from "zustand";
 
 import { ConversationFilesStoreType } from "@/src/web/messages/ConversationFilesProvider";
 import { useInfoContext } from "@/src/web/messages/contexts/InfoContext";
-import RouteInformation from "@/src/web/messages/routes/RouteInfomation";
+import RouteInformation from "@/src/web/messages/routes/RouteInformation";
 
 export default function Routes() {
+  const [type, setType] = useState<"notifications" | "choosable">(
+    "notifications"
+  );
+
   const { id } = useLocalSearchParams<{
     id?: string;
   }>();
@@ -17,16 +22,21 @@ export default function Routes() {
     return <></>;
   }
   const info = contacts[id];
+
   return (
     <YStack padding="$2" alignItems="center">
       <XGroup size="$4">
         <XGroup.Item>
-          <Button size="$8" icon={Activity}>
+          <Button
+            size="$8"
+            icon={Activity}
+            onPress={() => setType("notifications")}
+          >
             <Text>Notifications {info.notificationRoutes?.length}</Text>
           </Button>
         </XGroup.Item>
         <XGroup.Item>
-          <Button size="$8" icon={Airplay}>
+          <Button size="$8" icon={Airplay} onPress={() => setType("choosable")}>
             <Text>Choosable {info.routes.length}</Text>
           </Button>
         </XGroup.Item>
@@ -36,6 +46,7 @@ export default function Routes() {
         <RouteInformation
           colors={info.colors || ["black", "black"]}
           route={r}
+          contactRouteHash={store().routesHash}
           key={`route-${r.id}`}
         />
       ))}

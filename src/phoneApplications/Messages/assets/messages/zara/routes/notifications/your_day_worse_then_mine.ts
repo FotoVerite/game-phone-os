@@ -4,15 +4,17 @@ import {
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import { ZARA_ROUTE_IDS } from "../routes";
+import { ROUTE_IDS_ZARA_BENTHAM } from "../routes";
 
 export const your_day_worse_then_mine: NotificationRouteFileType = {
-  id: ZARA_ROUTE_IDS.YOUR_DAY_WORSE_THEN_MINE,
+  id: ROUTE_IDS_ZARA_BENTHAM.NOTIFICATION_YOUR_DAY_IS_WORSE_THAN_MINE,
   delay: 3000,
   conditions: {
     [MESSAGE_CONTACT_NAME.ZARA]: {
       routes: {
-        [ZARA_ROUTE_IDS.BORKED_PHONE]: { status: ROUTE_STATUS_TYPE.FINISHED },
+        [ROUTE_IDS_ZARA_BENTHAM.PROTAG_I_BORKED_MY_PHONE]: {
+          status: ROUTE_STATUS_TYPE.FINISHED,
+        },
       },
     },
   },

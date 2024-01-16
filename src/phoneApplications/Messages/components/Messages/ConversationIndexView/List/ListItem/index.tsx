@@ -12,8 +12,8 @@ import { Row } from "src/utility/layout";
 const ConversationListItem: FC<Omit<ConversationListType, "tags">> = ({
   heroImage,
   hasAvailableRoute,
-  logline_content,
-  logline_timestamp,
+  loglineContent: logline_content,
+  loglineTimestamp: logline_timestamp,
   interfaceColor,
   name,
 }) => {

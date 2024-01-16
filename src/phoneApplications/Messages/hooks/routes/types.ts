@@ -57,7 +57,7 @@ export type RouteConditionsType = {
 };
 
 export interface AbstractRouteType {
-  id: number;
+  id: string;
   name?: string;
   description?: string;
   purpose?: string;

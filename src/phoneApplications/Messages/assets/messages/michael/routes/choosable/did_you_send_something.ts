@@ -1,12 +1,11 @@
+import { ROUTE_IDS_MICHAEL_MYERS } from "../routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
   ChoosableRouteType,
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
-import { ExchangeBlockType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
-
-import { MICHAEL_IDS } from "../routes";
 
 export enum MICHAEL_ABOUT_TONIGHT_REPLY_OPTIONS {
   A = "I told you to send nudes on gridr",
@@ -19,15 +18,9 @@ const MICHAEL = MESSAGE_CONTACT_NAME.MICHAEL;
 const SELF = MESSAGE_CONTACT_NAME.SELF;
 
 export const did_you_send_somehing: ChoosableRouteType = {
-  id: MICHAEL_IDS.DID_YOU_SEND_SOMETHING,
+  id: ROUTE_IDS_MICHAEL_MYERS.NOTIFICATION_DID_YOU_SEND_SOMETHING,
   options: Object.values(OPTIONS),
-  conditions: {
-    [MESSAGE_CONTACT_NAME.MICHAEL]: {
-      routes: {
-        [MICHAEL_IDS.FIRST_TEXT]: { status: ROUTE_STATUS_TYPE.FINISHED },
-      },
-    },
-  },
+  conditions: {},
   routes: {
     [OPTIONS.B]: [
       {

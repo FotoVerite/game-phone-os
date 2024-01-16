@@ -21,7 +21,7 @@ import { cat_facts } from "../../assets/messages/cat_facts";
 import { emma } from "../../assets/messages/emma";
 import { lenny } from "../../assets/messages/lenny";
 import { michael } from "../../assets/messages/michael";
-import { spam1 } from "../../assets/messages/spam1";
+import { spam1 } from "../../assets/messages/antagonist_first_number";
 import { toSelf } from "../../assets/messages/toSelf";
 import { zara } from "../../assets/messages/zara";
 import { MESSAGE_CONTACT_NAME } from "../../constants";
@@ -60,8 +60,8 @@ const conversationHasExchange = (
 
 export const sortConversations =
   () => (c1: ConversationListType, c2: ConversationListType) => {
-    const date1 = moment(c1.logline_timestamp);
-    const date2 = moment(c2.logline_timestamp);
+    const date1 = moment(c1.loglineTimestamp);
+    const date2 = moment(c2.loglineTimestamp);
     return date1 < date2 ? 1 : -1;
   };
 
@@ -88,8 +88,8 @@ const convertFromConversationFromFileToListType = (
     ...props,
     ...{
       hasAvailableRoute,
-      logline_content: logline,
-      logline_timestamp: time,
+      loglineContent: logline,
+      loglineTimestamp: time,
     },
   };
 };

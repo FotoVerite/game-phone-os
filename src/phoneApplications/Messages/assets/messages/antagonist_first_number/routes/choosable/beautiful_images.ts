@@ -1,0 +1,64 @@
+import doll1 from "../../../images/broken_dolls1.jpeg";
+import doll2 from "../../../images/broken_dolls2.jpeg";
+import { ROUTE_IDS_ANTAGONIST_FIRST_NUMBER } from "../routes";
+
+import {
+  MESSAGE_CONTACT_NAME,
+  SNAPSHOT_NAMES,
+} from "@/src/phoneApplications/Messages/constants";
+import {
+  EFFECT_TYPE,
+  MESSAGE_CONTENT,
+} from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { ChoosableRouteType } from "@/src/phoneApplications/Messages/hooks/routes/types";
+
+export enum OPTIONS_ANTAGONIST_BEAUTIFUL_IMAGES {
+  A = "What the fuck are you on?",
+}
+
+const OPTIONS = OPTIONS_ANTAGONIST_BEAUTIFUL_IMAGES;
+const SPAM1 = MESSAGE_CONTACT_NAME.SPAM1;
+const SELF = MESSAGE_CONTACT_NAME.SELF;
+
+export const beautiful_images: ChoosableRouteType = {
+  id: ROUTE_IDS_ANTAGONIST_FIRST_NUMBER.PROTAG_RESPONSE_BEAUTIFUL_IMAGES,
+  options: Object.values(OPTIONS),
+  routes: {
+    [OPTIONS.A]: [
+      {
+        name: SELF,
+        messages: [OPTIONS.A],
+      },
+      {
+        name: SPAM1,
+        messages: [
+          { type: MESSAGE_CONTENT.IMAGE, content: doll1 },
+          "I think you can go further with them",
+          "They aren't unheimlich enough",
+          "You gotta push",
+        ],
+      },
+      {
+        name: SPAM1,
+        messages: ["This isn't funny"],
+      },
+      {
+        name: SELF,
+        messages: [
+          "I'm not trying to be funny",
+          "I'm trying to be off-putting",
+          { type: MESSAGE_CONTENT.IMAGE, content: doll2 },
+          {
+            type: MESSAGE_CONTENT.STRING,
+            content: "How am I doing?",
+            typingDelay: 5000,
+            effect: {
+              type: EFFECT_TYPE.BACKGROUND_SNAPSHOT,
+              data: { filename: SNAPSHOT_NAMES.SERIAL_SNAPSHOT },
+            },
+          },
+        ],
+      },
+    ],
+  },
+};

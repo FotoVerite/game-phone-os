@@ -18,8 +18,8 @@ const renderItem: ListRenderItem<ConversationListType> = ({ item }) => (
     hasAvailableRoute={item.hasAvailableRoute}
     interfaceColor={item.interfaceColor}
     name={item.name}
-    logline_timestamp={item.logline_timestamp}
-    logline_content={item.logline_content}
+    loglineTimestamp={item.loglineTimestamp}
+    loglineContent={item.loglineContent}
   />
 );
 

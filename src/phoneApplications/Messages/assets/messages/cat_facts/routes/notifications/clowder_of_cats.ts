@@ -1,16 +1,17 @@
+import { ROUTE_IDS_LENNY } from "../../../lenny/routes/routes";
+import { ROUTE_IDS_CAT_FACTS } from "../routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { ROUTE_STATUS_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import { LENNY_ROUTE_IDS } from "../../../lenny/routes/routes";
-import { CAT_FACT_IDS } from "../routes";
-
 export const clowder_of_cats = {
-  id: CAT_FACT_IDS.CLOWDER_OF_CATS,
+  id: ROUTE_IDS_CAT_FACTS.NOTIFICATION_CLOWDER_OF_CATS,
+  name: "Clowder of Cats",
   delay: 5000,
   conditions: {
     [MESSAGE_CONTACT_NAME.LENNY]: {
       routes: {
-        [LENNY_ROUTE_IDS.WHY_AM_I_GETTING_CAT_FACTS]: {
+        [ROUTE_IDS_LENNY.PROTAG_WHY_AM_I_GETTING_CAT_FACTS]: {
           status: ROUTE_STATUS_TYPE.STARTED,
         },
       },

@@ -1,8 +1,3 @@
-import {
-  AppEventsType,
-  MessageAppEventsContainerType,
-  MessageRouteEventDataType,
-} from "@/src/appEvents/reducer/types";
 import { Draft, produce } from "immer";
 import moment, { Moment } from "moment";
 
@@ -20,6 +15,11 @@ import {
 import { MESSAGE_CONTACT_NAME } from "../../constants";
 import { EFFECT_TYPE, isContentWithMeta } from "../contentWithMetaTypes";
 import { MessagePayloadType } from "../useConversation/digestion/types";
+import {
+  AppEventsType,
+  MessageAppEventsContainerType,
+  MessageRouteEventDataType,
+} from "@/src/appEvents/reducer/types";
 
 const contactHasBeenViewedCheck = (
   name: MESSAGE_CONTACT_NAME,

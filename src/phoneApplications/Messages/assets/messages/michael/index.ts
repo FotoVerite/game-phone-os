@@ -1,19 +1,20 @@
-import {
-  MESSAGE_CONTACT_INFO,
-  MESSAGE_CONTACT_NAME,
-} from "@/src/phoneApplications/Messages/constants";
-import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
-
+import avatar from "./assets/michael.jpg";
 import { i_feel_wrong } from "./routes/choosable/I_feel_wrong";
-import { michael_about_tonight_reply } from "./routes/choosable/michae_about_tonight_reply";
-import { michael_first_text } from "./routes/notifications/michael_first_text";
-const MICHAEL = MESSAGE_CONTACT_NAME.MICHAEL;
+import { michael_about_tonight_reply } from "./routes/choosable/about_tonight_reply";
+import { i_am_excited_to_see_you_tonight } from "./routes/notifications/i_am_excited_to_see_you_tonight";
+import { MESSAGE_CONTACT_NAME } from "../../../constants";
+import { ConversationFileType } from "../../../hooks/useConversations/types";
+
 export const michael: ConversationFileType = {
-  name: MESSAGE_CONTACT_NAME.MICHAEL,
+  full_name: MESSAGE_CONTACT_NAME.MICHAEL,
+  displayName: "Maybe: Michael",
+  age: 35,
+  phoneNumber: "(201)-242-2424",
+  colors: ["#f54295", "#8900fa"],
   tags: [MESSAGE_CONTACT_NAME.MICHAEL, "love", "boyfriend", "sex"],
-  heroImage: MESSAGE_CONTACT_INFO[MICHAEL].avatar,
-  interfaceColor: MESSAGE_CONTACT_INFO[MICHAEL].colors[0],
-  notificationRoutes: [michael_first_text],
+  heroImage: avatar,
+  interfaceColor: "#f54295",
+  notificationRoutes: [i_am_excited_to_see_you_tonight],
   routes: [michael_about_tonight_reply, i_feel_wrong],
   exchanges: [],
 };

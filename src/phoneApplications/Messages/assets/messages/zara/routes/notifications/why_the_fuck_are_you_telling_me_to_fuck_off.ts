@@ -1,11 +1,10 @@
+import { ROUTE_IDS_ZARA_BENTHAM } from "../routes";
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { NotificationRouteFileType } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import { ZARA_ROUTE_IDS } from "../routes";
-
 export const zara_why_are_you_telling_me_to_fuck_off: NotificationRouteFileType =
   {
-    id: ZARA_ROUTE_IDS.WHY_ARE_YOU_TELLING_ME_TO_FUCK_OFF,
+    id: ROUTE_IDS_ZARA_BENTHAM.WHY_ARE_YOU_TELLING_ME_TO_FUCK_OFF,
     delay: 2500,
     conditions: {},
     exchanges: [
