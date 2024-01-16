@@ -1,4 +1,6 @@
+import { ROUTE_IDS_ANTAGONIST_FIRST_NUMBER } from "../../../../antagonist_first_number/routes/routes";
 import { ROUTE_IDS_ZARA_BENTHAM } from "../../routes";
+
 import {
   MESSAGE_CONTACT_NAME,
   SNAPSHOT_NAMES,
@@ -8,7 +10,6 @@ import {
   ChoosableRouteType,
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
-import { ROUTE_IDS_ANTAGONIST_FIRST_NUMBER } from "../../../../antagonist_first_number/routes/routes";
 
 export enum SPAMMER_IS_BEING_WEIRD_OPTIONS {
   A = "That spammer is getting weird",

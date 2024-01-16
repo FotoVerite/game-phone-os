@@ -65,6 +65,7 @@ const exchanges: ExchangeBlockType[] = [
 
 export const i_dont_know_what_to_do_with_myself: ChoosableRouteType = {
   id: ROUTE_IDS_ZARA_BENTHAM.PROTAG_I_DONT_KNOW_WHAT_TO_DO_WITH_MYSELF,
+  name: "I have no idea what to do with not having access to my account",
   options: Object.values(OPTIONS),
   conditions: {
     [MESSAGE_CONTACT_NAME.ZARA]: {

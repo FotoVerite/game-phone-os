@@ -13,6 +13,9 @@ const SELF = MESSAGE_CONTACT_NAME.SELF;
 
 export const i_am_being_harassed: ChoosableRouteType = {
   id: ROUTE_IDS_ZARA_BENTHAM.I_AM_BEING_HARASSED,
+  name: "I'm being harassed",
+  purpose:
+    "Shows that Protagonist is more comfortable reaching out to Zara then his family.",
   options: Object.values(OPTIONS_ZARA_BENTHAM_I_AM_BEING_HARASSED),
   routes: {
     [OPTIONS_ZARA_BENTHAM_I_AM_BEING_HARASSED.A]: [

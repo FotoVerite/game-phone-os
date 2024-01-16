@@ -8,7 +8,7 @@ import {
 
 export const my_ahri_build: NotificationRouteFileType = {
   id: ROUTE_IDS_LENNY.NOTIFICATION_WHAT_IS_GOING_ON,
-  description: "Lenny is worried about his brother",
+  name: "Lenny asks if Protagonist is Okay",
   delay: 12000,
   conditions: [
     {

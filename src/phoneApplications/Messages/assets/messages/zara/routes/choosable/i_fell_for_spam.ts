@@ -1,8 +1,9 @@
+import creepyBabyThree from "../../../antagonist_first_number/assets/creepyBaby3.jpeg";
 import { OPTIONS_ANTAGONIST_PROTAG_CHOICE_TO_SEND_IMAGES_OR_NOT } from "../../../antagonist_first_number/routes/choosable/protagonist_choice_to_send_images_or_not";
 import { ROUTE_IDS_ANTAGONIST_FIRST_NUMBER } from "../../../antagonist_first_number/routes/routes";
-import creepyBabyThree from "../../spam1/assets/creepyBaby3.jpeg";
+import { ROUTE_IDS_ZARA_BENTHAM } from "../routes";
 
-import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants/index";
 import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
   ChoosableRouteType,
@@ -141,7 +142,7 @@ const did_send_images: ExchangeBlockType[] = [
 ];
 
 export const i_fell_for_spam: ChoosableRouteType = {
-  id: ZARA_ROUTE_IDS.I_FELL_FOR_SPAM,
+  id: ROUTE_IDS_ZARA_BENTHAM.PROTAG_I_FELL_FOR_SPAM,
   options: OPTIONS,
   conditions: {
     [MESSAGE_CONTACT_NAME.SPAM1]: {

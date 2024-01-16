@@ -55,6 +55,8 @@ const exchanges = [
 
 export const your_new_video: ChoosableRouteType = {
   id: ROUTE_IDS_ZARA_BENTHAM.PROTAG_I_WATCHED_YOUR_NEW_VIDEO,
+  name: "I watched your new skincare video",
+  purpose: "Give background on who Zara is",
   options: Object.values(OPTIONS),
   conditions: {
     [MESSAGE_CONTACT_NAME.ZARA]: {

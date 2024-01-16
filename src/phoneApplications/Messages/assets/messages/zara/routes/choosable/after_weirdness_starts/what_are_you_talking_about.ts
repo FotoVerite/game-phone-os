@@ -1,3 +1,5 @@
+import { ROUTE_IDS_ZARA_BENTHAM } from "../../routes";
+
 import {
   MESSAGE_CONTACT_NAME,
   SNAPSHOT_NAMES,
@@ -7,8 +9,6 @@ import {
   ChoosableRouteType,
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
-
-import { ZARA_ROUTE_IDS } from "../../routes";
 
 export enum OPTIONS_ZARA_BENTHAM_WHAT_ARE_YOU_TALKING_ABOUT {
   A = "What are you talking about",
@@ -20,12 +20,14 @@ const SELF = MESSAGE_CONTACT_NAME.SELF;
 const SPAM = MESSAGE_CONTACT_NAME.SPAM4;
 
 export const zara_what_are_you_talking_about: ChoosableRouteType = {
-  id: ZARA_ROUTE_IDS.WHAT_ARE_YOU_TALKING_ABOUT,
+  id: ROUTE_IDS_ZARA_BENTHAM.WHAT_ARE_YOU_TALKING_ABOUT,
+  purpose:
+    "Demonstrates that nothing on the phone can be trusted a that Antagonist is fully in control of what gets displayed.",
   options: Object.values(OPTIONS),
   conditions: {
     [MESSAGE_CONTACT_NAME.ZARA]: {
       routes: {
-        [ZARA_ROUTE_IDS.WHY_ARE_YOU_TELLING_ME_TO_FUCK_OFF]: {
+        [ROUTE_IDS_ZARA_BENTHAM.WHY_ARE_YOU_TELLING_ME_TO_FUCK_OFF]: {
           status: ROUTE_STATUS_TYPE.FINISHED,
         },
       },

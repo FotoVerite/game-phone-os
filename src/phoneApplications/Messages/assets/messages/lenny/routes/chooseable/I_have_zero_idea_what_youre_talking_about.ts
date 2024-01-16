@@ -1,6 +1,8 @@
 // Description: OP and his brother discuss a reddit creepypaste/rumor.
 // Point: Give context for the setting of the game and set tone of the horror. Also so how fractured his family is
 
+import { ROUTE_IDS_LENNY } from "../routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import {
   ChoosableRouteType,
@@ -8,17 +10,16 @@ import {
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 import { ExchangeBlockType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
-import { LENNY_ROUTE_IDS } from "../routes";
-
 const LENNY = MESSAGE_CONTACT_NAME.LENNY;
 const SELF = MESSAGE_CONTACT_NAME.SELF;
 
-enum OPTIONS {
+enum OPTIONS_LENNY_PROTAG_I_HAVE_ZERO_IDEA_WHAT_YOURE_TALKING_ABOUT {
   A = "Botlane, ELO, WUT",
   B = "Maokai sucks",
   C = "Really don't want to talk about this right now",
 }
 
+const OPTIONS = OPTIONS_LENNY_PROTAG_I_HAVE_ZERO_IDEA_WHAT_YOURE_TALKING_ABOUT;
 const exchanges: ExchangeBlockType[] = [
   {
     name: SELF,
@@ -30,13 +31,14 @@ const exchanges: ExchangeBlockType[] = [
   },
 ];
 
-export const i_have_zero_ideawhat_youre_talking_about: ChoosableRouteType = {
-  id: LENNY_ROUTE_IDS.MIDNIGHT_SOCIETY,
+export const i_have_zero_idea_what_youre_talking_about: ChoosableRouteType = {
+  id: ROUTE_IDS_LENNY.PROTAG_DOES_HE_WANT_TO_HEAR_THE_STORY_CHOICES,
+  description: "Protagonist doesn't understand the previous notification",
   options: Object.values(OPTIONS),
   conditions: {
     [MESSAGE_CONTACT_NAME.LENNY]: {
       routes: {
-        [LENNY_ROUTE_IDS.WANT_TO_HEAR_SOMETHING_SCARY]: {
+        [ROUTE_IDS_LENNY.NOTIFICATION_MY_AHRI_BUILD]: {
           status: ROUTE_STATUS_TYPE.FINISHED,
         },
       },

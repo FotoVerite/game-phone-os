@@ -1,17 +1,19 @@
+import { your_mom_is_a_cunt } from "./routes/notifications/your_mom_is_a_cunt";
+
 import {
-  MESSAGE_CONTACT_INFO,
+  DEFAULT_CONVERSATION_INFO,
   MESSAGE_CONTACT_NAME,
 } from "@/src/phoneApplications/Messages/constants";
 import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
-import { your_mom_is_a_cunt } from "./routes/notifications/your_mom_is_a_cunt";
-
 const EMMA = MESSAGE_CONTACT_NAME.EMMA;
 export const emma: ConversationFileType = {
-  name: EMMA,
+  full_name: EMMA,
+  displayName: "Maybe: Emma",
   tags: [EMMA],
-  heroImage: MESSAGE_CONTACT_INFO[EMMA].avatar,
-  interfaceColor: MESSAGE_CONTACT_INFO[EMMA].colors[0],
+  heroImage: DEFAULT_CONVERSATION_INFO.avatar,
+  colors: DEFAULT_CONVERSATION_INFO.colors,
+  interfaceColor: DEFAULT_CONVERSATION_INFO.colors[0],
   notificationRoutes: [your_mom_is_a_cunt],
   exchanges: [],
   routes: [],

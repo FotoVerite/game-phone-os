@@ -1,7 +1,7 @@
-import spam1_image from "../assets/spam1.png";
+import spam1_image from "../../assets/spam1.png";
 import { ROUTE_IDS_ANTAGONIST_FIRST_NUMBER } from "../routes";
 
-import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants/index";
 import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
   ChoosableRouteType,

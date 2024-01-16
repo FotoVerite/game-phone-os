@@ -1,7 +1,7 @@
 import { Activity, Airplay } from "@tamagui/lucide-icons";
 import { useLocalSearchParams } from "expo-router";
 import React, { useState } from "react";
-import { XGroup, Button, YStack, Text } from "tamagui";
+import { XGroup, Button, YStack, Text, ScrollView } from "tamagui";
 import { create } from "zustand";
 
 import { ConversationFilesStoreType } from "@/src/web/messages/ConversationFilesProvider";
@@ -17,15 +17,15 @@ export default function Routes() {
     id?: string;
   }>();
   const store = useInfoContext<ConversationFilesStoreType>();
-  const contacts = store().contacts;
+  const { contacts, routesHash } = store();
+
   if (!id) {
     return <></>;
   }
   const info = contacts[id];
-
   return (
-    <YStack padding="$2" alignItems="center">
-      <XGroup size="$4">
+    <YStack paddingVertical="$2" f={1}>
+      <XGroup size="$4" alignSelf="center">
         <XGroup.Item>
           <Button
             size="$8"
@@ -41,15 +41,16 @@ export default function Routes() {
           </Button>
         </XGroup.Item>
       </XGroup>
-
-      {info.notificationRoutes?.map((r) => (
-        <RouteInformation
-          colors={info.colors || ["black", "black"]}
-          route={r}
-          contactRouteHash={store().routesHash}
-          key={`route-${r.id}`}
-        />
-      ))}
+      <ScrollView>
+        {info.notificationRoutes?.map((r) => (
+          <RouteInformation
+            colors={info.colors || ["black", "black"]}
+            route={r}
+            contactRouteHash={routesHash}
+            key={`route-${r.id}`}
+          />
+        ))}
+      </ScrollView>
     </YStack>
   );
 }

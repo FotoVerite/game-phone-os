@@ -1,3 +1,3 @@
-export enum EMMA_ROUTE_IDS {
-  YOUR_MOM_IS_A_CUNT,
+export enum ROUTE_IDS_EMMA {
+  "YOUR_MOM_IS_A_CUNT" = "YOUR_MOM_IS_A_CUNT",
 }

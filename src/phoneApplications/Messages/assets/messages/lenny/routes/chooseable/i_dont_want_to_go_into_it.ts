@@ -1,6 +1,8 @@
 // Description: OP and his brother discuss a reddit creepypaste/rumor.
 // Point: Give context for the setting of the game and set tone of the horror. Also so how fractured his family is
 
+import { ROUTE_IDS_LENNY } from "../routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
@@ -8,24 +10,26 @@ import {
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import { LENNY_ROUTE_IDS } from "../routes";
-
 const LENNY = MESSAGE_CONTACT_NAME.LENNY;
 const SELF = MESSAGE_CONTACT_NAME.SELF;
 
-enum OPTIONS {
+enum OPTIONS_LENNY_PROTAG_I_DONT_WANT_TO_GO_INTO_IT {
   A = "I...",
   B = "Just fuck off, you're never there when I need you",
   C = "What even is the point of discussing this",
 }
 
+const OPTIONS = OPTIONS_LENNY_PROTAG_I_DONT_WANT_TO_GO_INTO_IT;
+
 export const i_dont_want_to_go_into_it: ChoosableRouteType = {
-  id: LENNY_ROUTE_IDS.I_DONT_WANT_GO_INTO_IT,
-  options: Object.values(OPTIONS),
+  id: ROUTE_IDS_LENNY.PROTAG_I_DONT_WANT_TO_GO_INTO_IT,
+  name: "Protag navel gazes with Lenny",
+  purpose: "Give more insight into how Protag feels in general",
+  options: Object.values(OPTIONS_LENNY_PROTAG_I_DONT_WANT_TO_GO_INTO_IT),
   conditions: {
     [MESSAGE_CONTACT_NAME.LENNY]: {
       routes: {
-        [LENNY_ROUTE_IDS.WANT_TO_HEAR_SOMETHING_SCARY]: {
+        [ROUTE_IDS_LENNY.NOTIFICATION_MY_AHRI_BUILD]: {
           status: ROUTE_STATUS_TYPE.FINISHED,
         },
       },

@@ -18,6 +18,9 @@ const SELF = MESSAGE_CONTACT_NAME.SELF;
 
 export const zara_contact_conversation: ChoosableRouteType = {
   id: ROUTE_IDS_ZARA_BENTHAM.CONTACT_CONVERSATION,
+  name: "Protagonist contact choice",
+  description: "Protagonist chooses between Mileena and Chris",
+  purpose: "Gives some nonlinearity to the branches",
   options: Object.values(OPTIONS),
   conditions: {
     [ZARA]: {

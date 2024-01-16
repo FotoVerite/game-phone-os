@@ -1,6 +1,15 @@
 // Description: OP and his brother discuss a reddit creepypaste/rumor.
 // Point: Give context for the setting of the game and set tone of the horror. Also so how fractured his family is
 
+import lenny1 from "../../assets/lenny1.mov";
+import lenny2 from "../../assets/lenny2.mov";
+import lenny3 from "../../assets/lenny3.mov";
+import lenny4 from "../../assets/lenny4.mov";
+import lenny5 from "../../assets/lenny5.mov";
+import lenny6 from "../../assets/lenny6.mov";
+import lenny7 from "../../assets/lenny7.mov";
+import { ROUTE_IDS_LENNY } from "../routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import {
   MESSAGE_CONTENT,
@@ -11,15 +20,6 @@ import {
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 import { ExchangeBlockType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
-
-import lenny1 from "../../assets/lenny1.mov";
-import lenny2 from "../../assets/lenny2.mov";
-import lenny3 from "../../assets/lenny3.mov";
-import lenny4 from "../../assets/lenny4.mov";
-import lenny5 from "../../assets/lenny5.mov";
-import lenny6 from "../../assets/lenny6.mov";
-import lenny7 from "../../assets/lenny7.mov";
-import { LENNY_ROUTE_IDS } from "../routes";
 
 const LENNY = MESSAGE_CONTACT_NAME.LENNY;
 const SELF = MESSAGE_CONTACT_NAME.SELF;
@@ -250,12 +250,13 @@ const exchanges: ExchangeBlockType[] = [
 ];
 
 export const lenny_midnight_society: ChoosableRouteType = {
-  id: LENNY_ROUTE_IDS.MIDNIGHT_SOCIETY,
+  id: ROUTE_IDS_LENNY.PROTAG_DOES_HE_WANT_TO_HEAR_THE_STORY_CHOICES,
+  name: "Protag Responds to Lenny's Story Request",
   options: Object.values(OPTIONS),
   conditions: {
     [MESSAGE_CONTACT_NAME.LENNY]: {
       routes: {
-        [LENNY_ROUTE_IDS.WANT_TO_HEAR_SOMETHING_SCARY]: {
+        [ROUTE_IDS_LENNY.NOTIFICATION_WANT_TO_HEAR_SOMETHING_SCARY]: {
           status: ROUTE_STATUS_TYPE.FINISHED,
         },
       },

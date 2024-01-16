@@ -1,28 +1,30 @@
 // Description: OP and his brother discuss a reddit creepypaste/rumor.
 // Point: Give context for the setting of the game and set tone of the horror. Also so how fractured his family is
 
+import { ROUTE_IDS_LENNY } from "../routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import {
   ChoosableRouteType,
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import { LENNY_ROUTE_IDS } from "../routes";
-
 const LENNY = MESSAGE_CONTACT_NAME.LENNY;
 const SELF = MESSAGE_CONTACT_NAME.SELF;
 
-enum OPTIONS {
+enum OPTIONS_LENNY_YES_EXACTLY {
   A = "Yes exactly",
 }
+const OPTIONS = OPTIONS_LENNY_YES_EXACTLY;
 
 export const yes_exactly: ChoosableRouteType = {
-  id: LENNY_ROUTE_IDS.YES_EXACTLY,
+  id: ROUTE_IDS_LENNY.YES_EXACTLY,
+  name: "Lenny claims he did not sign protagonist up to cat facts",
   options: Object.values(OPTIONS),
   conditions: {
     [MESSAGE_CONTACT_NAME.LENNY]: {
       routes: {
-        [LENNY_ROUTE_IDS.IM_STILL_CONFUSED]: {
+        [ROUTE_IDS_LENNY.NOTIFICATION_IM_STILL_CONFUSED]: {
           status: ROUTE_STATUS_TYPE.FINISHED,
         },
       },

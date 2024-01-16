@@ -3,6 +3,7 @@ import {
   protagonist_choice_to_send_images_or_not,
 } from "./routes/choosable/protagonist_choice_to_send_images_or_not";
 import { spam1_exchange_one } from "./routes/choosable/spam1_exchange_one";
+import { what_is_with_this_serial_killer_bullshit } from "./routes/choosable/what_is_with_this_serial_stalker_bullshit";
 import {
   did_not_send_images,
   notification_sent_images,
@@ -15,10 +16,9 @@ import {
 } from "../../../constants";
 import { ROUTE_STATUS_TYPE } from "../../../hooks/routes/types";
 import { ConversationFileType } from "../../../hooks/useConversations/types";
-import { what_is_with_this_serial_killer_bullshit } from "../antagonistIfSpamBlocked/choosable/antagonist_what_is_with_this_serial_killer_bullshit";
 
 const NAME = MESSAGE_CONTACT_NAME.SPAM1;
-export const antagonist_first_number: ConversationFileType = {
+const antagonist_first_number: ConversationFileType = {
   full_name: NAME,
   age: 39,
   displayName: "1-222-666-1337",
@@ -69,3 +69,5 @@ export const antagonist_first_number: ConversationFileType = {
     what_is_with_this_serial_killer_bullshit,
   ],
 };
+
+export default antagonist_first_number;

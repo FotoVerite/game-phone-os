@@ -1,3 +1,5 @@
+import { ANTAGONIST_IF_BLOCKED } from "../routes/routes";
+
 import {
   MESSAGE_CONTACT_NAME,
   SNAPSHOT_NAMES,
@@ -11,8 +13,6 @@ import {
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import { ANTAGONIST_IF_BLOCKED } from "../routes/routes";
-
 export enum SPAM2_WHAT_IS_WITH_THIS_SERIAL_STALKER_BULLSHIT_OPTIONS {
   A = "What the fuck are you on?",
 }
@@ -21,7 +21,7 @@ const OPTIONS = SPAM2_WHAT_IS_WITH_THIS_SERIAL_STALKER_BULLSHIT_OPTIONS;
 const SPAM = MESSAGE_CONTACT_NAME.SPAM2;
 const SELF = MESSAGE_CONTACT_NAME.SELF;
 
-export const what_is_with_this_serial_killer_bullshit: ChoosableRouteType = {
+export const blocked_serial_killer_bullshit: ChoosableRouteType = {
   id: ANTAGONIST_IF_BLOCKED.WHAT_IS_WITH_THIS_SERIAL_STALKER_BULLSHIT,
   options: Object.values(OPTIONS),
   conditions: {

@@ -1,9 +1,9 @@
-import creepyBabyTwo from "../assets/creepyBaby2.jpeg";
-import creepyBabyThree from "../assets/creepyBaby3.jpeg";
-import creepyBabyOne from "../assets/creepy_baby1.jpg";
+import creepyBabyTwo from "../../assets/creepyBaby2.jpeg";
+import creepyBabyThree from "../../assets/creepyBaby3.jpeg";
+import creepyBabyOne from "../../assets/creepy_baby1.jpg";
 import { ROUTE_IDS_ANTAGONIST_FIRST_NUMBER } from "../routes";
 
-import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants/index";
 import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
   ChoosableRouteType,

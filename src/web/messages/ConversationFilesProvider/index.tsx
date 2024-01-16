@@ -39,13 +39,12 @@ const ConversationFilesProvider: FC<PropsWithChildren> = ({ children }) => {
     return routes;
   };
 
-  const routeHash = contactList.reduce((acc, contact) => {
+  const routesHash = contactList.reduce((acc, contact) => {
     acc[contact.full_name] = reduceToRoutes(contact);
     return acc;
   }, {} as ContactRouteHashType);
-
   return (
-    <InfoContextProvider initialValue={{ contacts, errors, routeHash }}>
+    <InfoContextProvider initialValue={{ contacts, errors, routesHash }}>
       {children}
     </InfoContextProvider>
   );

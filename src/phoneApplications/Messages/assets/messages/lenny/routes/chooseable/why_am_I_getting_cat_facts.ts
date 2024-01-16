@@ -1,6 +1,9 @@
 // Description: OP and his brother discuss a reddit creepypaste/rumor.
 // Point: Give context for the setting of the game and set tone of the horror. Also so how fractured his family is
 
+import cat_facts from "../../assets/cat_facts.png";
+import { ROUTE_IDS_LENNY } from "../routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
 import {
@@ -8,16 +11,15 @@ import {
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import cat_facts from "../../assets/cat_facts.png";
-import { LENNY_ROUTE_IDS } from "../routes";
-
 const LENNY = MESSAGE_CONTACT_NAME.LENNY;
 const SELF = MESSAGE_CONTACT_NAME.SELF;
 
-enum OPTIONS {
+enum OPTIONS_LENNY_PROTAG_WHY_AM_I_GETTING_CAT_FACTS {
   A = "Did you sign me up for cat facts?",
   B = "Are you messaging me as cat facts to mess with me.",
 }
+
+const OPTIONS = OPTIONS_LENNY_PROTAG_WHY_AM_I_GETTING_CAT_FACTS;
 
 const baseEndpoint = [
   {
@@ -71,12 +73,13 @@ const baseEndpoint = [
 ];
 
 export const why_am_i_getting_cat_facts: ChoosableRouteType = {
-  id: LENNY_ROUTE_IDS.WHY_AM_I_GETTING_CAT_FACTS,
+  id: ROUTE_IDS_LENNY.PROTAG_WHY_AM_I_GETTING_CAT_FACTS,
+  name: "Protagonist asks why he is getting cat facts",
   options: Object.values(OPTIONS),
   conditions: {
     [MESSAGE_CONTACT_NAME.LENNY]: {
       routes: {
-        [LENNY_ROUTE_IDS.MIDNIGHT_SOCIETY]: {
+        [ROUTE_IDS_LENNY.PROTAG_DOES_HE_WANT_TO_HEAR_THE_STORY_CHOICES]: {
           status: ROUTE_STATUS_TYPE.FINISHED,
         },
       },

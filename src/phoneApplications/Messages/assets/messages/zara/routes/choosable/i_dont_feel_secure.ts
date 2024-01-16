@@ -17,6 +17,8 @@ const SELF = MESSAGE_CONTACT_NAME.SELF;
 
 export const i_dont_feel_secure: ChoosableRouteType = {
   id: ROUTE_IDS_ZARA_BENTHAM.PROTAG_I_DONT_FEEL_SECURE_WITH_MICHAEL,
+  description:
+    "Protagonist explains how he feels about his relationship with Michael",
   options: Object.values(OPTIONS),
   conditions: {
     [MESSAGE_CONTACT_NAME.MICHAEL]: {

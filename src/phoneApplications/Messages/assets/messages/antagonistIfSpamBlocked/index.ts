@@ -1,9 +1,3 @@
-import {
-  MESSAGE_CONTACT_INFO,
-  MESSAGE_CONTACT_NAME,
-} from "@/src/phoneApplications/Messages/constants";
-import { ROUTE_STATUS_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
-import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 import { produce } from "immer";
 
 import { what_is_with_this_serial_killer_bullshit } from "./choosable/antagonist_what_is_with_this_serial_killer_bullshit";
@@ -13,16 +7,21 @@ import { why_dont_you_respond2 } from "./notifications/why_dont_you_reply2";
 import { why_dont_you_respond3 } from "./notifications/why_dont_you_reply3";
 import { why_dont_you_respond4 } from "./notifications/why_dont_you_reply4";
 import { ANTAGONIST_IF_BLOCKED } from "./routes/routes";
-
+import {
+  DEFAULT_CONVERSATION_INFO,
+  MESSAGE_CONTACT_NAME,
+} from "../../../constants/index";
+import { ROUTE_STATUS_TYPE } from "../../../hooks/routes/types";
+import { ConversationFileType } from "../../../hooks/useConversations/types";
 const createReplications = (
   original: ConversationFileType,
   replicateName: MESSAGE_CONTACT_NAME,
   deleteRoute?: number
 ) => {
   return produce(original, (draft) => {
-    const originalName = draft.name;
+    const originalName = draft.full_name;
     const name = replicateName;
-    draft.name = name;
+    draft.full_name = name;
     draft.conditions = { [originalName]: { blocked: true } };
     if (draft.blockable && draft.blockable !== true) {
       const conditions = draft.blockable.conditions[originalName]?.routes;
@@ -60,10 +59,11 @@ const createReplications = (
 
 const NAME = MESSAGE_CONTACT_NAME.SPAM2;
 const antagonistIfSpamBlocked: ConversationFileType = {
-  name: NAME,
+  full_name: NAME,
   tags: [NAME],
-  heroImage: MESSAGE_CONTACT_INFO[NAME].avatar,
-  interfaceColor: MESSAGE_CONTACT_INFO[NAME].colors[0],
+  heroImage: DEFAULT_CONVERSATION_INFO.avatar,
+  colors: DEFAULT_CONVERSATION_INFO.colors,
+  interfaceColor: DEFAULT_CONVERSATION_INFO.colors[0],
   notificationRoutes: [
     dont_you_miss_me,
     why_dont_you_respond,

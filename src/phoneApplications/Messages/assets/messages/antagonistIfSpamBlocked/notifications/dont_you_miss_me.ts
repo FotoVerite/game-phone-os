@@ -1,9 +1,9 @@
-import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
-import { ROUTE_STATUS_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
-
-import { SPAM1_IDS } from "../../antagonist_first_number/routes/routes";
-import { ZARA_ROUTE_IDS } from "../../zara/routes/routes";
+import { ROUTE_IDS_ANTAGONIST_FIRST_NUMBER } from "../../antagonist_first_number/routes/routes";
+import { ROUTE_IDS_ZARA_BENTHAM } from "../../zara/routes/routes";
 import { ANTAGONIST_IF_BLOCKED } from "../routes/routes";
+
+import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants/index";
+import { ROUTE_STATUS_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 export const dont_you_miss_me = {
   id: ANTAGONIST_IF_BLOCKED.DONT_YOU_MISS_ME,
@@ -12,17 +12,17 @@ export const dont_you_miss_me = {
     [MESSAGE_CONTACT_NAME.SPAM1]: {
       blocked: true,
       routes: {
-        [SPAM1_IDS.DID_SEND_IMAGES_NOTIFICATION]: {
+        [ROUTE_IDS_ANTAGONIST_FIRST_NUMBER.NOTIFICATION_DID_SEND_IMAGES]: {
           status: ROUTE_STATUS_TYPE.CONDITIONS_NOT_MET,
         },
-        [SPAM1_IDS.DID_NOT_SEND_IMAGES_NOTIFICATION]: {
+        [ROUTE_IDS_ANTAGONIST_FIRST_NUMBER.NOTIFICATION_DID_NOT_SEND_IMAGES]: {
           status: ROUTE_STATUS_TYPE.CONDITIONS_NOT_MET,
         },
       },
     },
     [MESSAGE_CONTACT_NAME.ZARA]: {
       routes: {
-        [ZARA_ROUTE_IDS.I_DONT_FEEL_SECURE]: {
+        [ROUTE_IDS_ZARA_BENTHAM.I_DONT_FEEL_SECURE]: {
           status: ROUTE_STATUS_TYPE.FINISHED,
         },
       },

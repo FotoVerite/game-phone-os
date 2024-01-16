@@ -1,18 +1,21 @@
-import { MILEENA_ROUTE_IDS } from "./routes";
+import { ROUTE_IDS_MILEENA } from "./routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { ChoosableRouteType } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-export enum MILEENA_BUT_SERIOUSLY_OPTIONS {
+export enum OPTIONS_MILEENA_PROTAG_BUT_SERIOUSLY {
   A = "But seriously, I can't walk",
   B = "What if I'm not recovered",
 }
 
-const OPTIONS = MILEENA_BUT_SERIOUSLY_OPTIONS;
+const OPTIONS = OPTIONS_MILEENA_PROTAG_BUT_SERIOUSLY;
 const MILEENA = MESSAGE_CONTACT_NAME.MILEENA;
 const SELF = MESSAGE_CONTACT_NAME.SELF;
 
 export const but_seriously: ChoosableRouteType = {
-  id: MILEENA_ROUTE_IDS.BUT_SERIOUSLY,
+  id: ROUTE_IDS_MILEENA.PROTAG_BUT_SERIOUSLY,
+  name: "But seriously I'm so sore",
+  description: "Mileena and Protagonist talk more about the gym",
   options: Object.values(OPTIONS),
   routes: {
     [OPTIONS.A]: [

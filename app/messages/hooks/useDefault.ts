@@ -5,7 +5,6 @@ export default function useDefaults<T>(
   const errorsRet = [] as string[];
   context.keys().forEach((key) => {
     const module = context(key);
-
     if ("default" in module) {
       const defaultExport = module.default;
       ret.push(defaultExport);

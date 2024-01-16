@@ -1,27 +1,29 @@
+import { ROUTE_IDS_LENNY } from "../../../lenny/routes/routes";
+import { ROUTE_IDS_ZARA_BENTHAM } from "../routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import {
   ChoosableRouteType,
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import { ZARA_ROUTE_IDS } from "./routes";
-import { LENNY_ROUTE_IDS } from "../../lenny/routes/routes";
-
-export enum ZARA_MY_BRO_IS_BEING_SO_ANNOYING {
+export enum OPTIONS_ZARA_BENTHAM_MY_BRO_IS_ANNOYING {
   A = "My Bro is being so annoying",
 }
 
-const OPTIONS = ZARA_MY_BRO_IS_BEING_SO_ANNOYING;
+const OPTIONS = OPTIONS_ZARA_BENTHAM_MY_BRO_IS_ANNOYING;
 const ZARA = MESSAGE_CONTACT_NAME.ZARA;
 const SELF = MESSAGE_CONTACT_NAME.SELF;
 
 export const my_bro_is_being_annoying: ChoosableRouteType = {
-  id: ZARA_ROUTE_IDS.MY_BRO_IS_BEING_SO_ANNOYING,
+  id: ROUTE_IDS_ZARA_BENTHAM.PROTAG_MY_BRO_IS_ANNOYING,
+  name: "My brother is being annoying",
+  purpose: "Give additional context and information about Leonard",
   options: Object.values(OPTIONS),
   conditions: {
     [MESSAGE_CONTACT_NAME.LENNY]: {
       routes: {
-        [LENNY_ROUTE_IDS.MIDNIGHT_SOCIETY]: {
+        [ROUTE_IDS_LENNY.PROTAG_DOES_HE_WANT_TO_HEAR_THE_STORY_CHOICES]: {
           status: ROUTE_STATUS_TYPE.FINISHED,
         },
       },

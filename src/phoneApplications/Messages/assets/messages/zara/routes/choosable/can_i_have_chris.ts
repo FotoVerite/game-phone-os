@@ -15,6 +15,7 @@ const SELF = MESSAGE_CONTACT_NAME.SELF;
 
 export const can_i_have_chris: ChoosableRouteType = {
   id: ROUTE_IDS_ZARA_BENTHAM["PROTAG_CAN_I_HAVE_CHRIS'_CONTACT"],
+  name: "Protag asks for Chris' contact ",
   options: Object.values(OPTIONS),
   conditions: {
     [MESSAGE_CONTACT_NAME.ZARA]: {

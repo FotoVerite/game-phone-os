@@ -10,7 +10,8 @@ import {
 export const how_is_the_phone_coming: NotificationRouteFileType = {
   id: ROUTE_IDS_ZARA_BENTHAM.NOTIFICATION_HOW_IS_THE_NEW_PHONE,
   name: "How's the Phone?",
-  description: "Zara ask PO how he is liking his new phone",
+  description: "Zara ask Protagonist how he is liking his new phone",
+  purpose: "Indicate to user how notifications work in the game",
   delay: 1000,
   conditions: {
     [MESSAGE_CONTACT_NAME.SELF]: {

@@ -48191,29 +48191,6 @@
           "val": 48,
           "variable": ""
         }
-      },
-      "icon": {
-        "sm": {
-          "isVar": true,
-          "key": "$sm",
-          "name": "icon-1",
-          "val": 16,
-          "variable": ""
-        },
-        "md": {
-          "isVar": true,
-          "key": "$md",
-          "name": "icon-2",
-          "val": 24,
-          "variable": ""
-        },
-        "lg": {
-          "isVar": true,
-          "key": "$lg",
-          "name": "icon-3",
-          "val": 32,
-          "variable": ""
-        }
       }
     },
     "unset": {},
@@ -50392,27 +50369,6 @@
         "key": "$4.5",
         "name": "size-13",
         "val": 48,
-        "variable": ""
-      },
-      "$icon.sm": {
-        "isVar": true,
-        "key": "$sm",
-        "name": "icon-1",
-        "val": 16,
-        "variable": ""
-      },
-      "$icon.md": {
-        "isVar": true,
-        "key": "$md",
-        "name": "icon-2",
-        "val": 24,
-        "variable": ""
-      },
-      "$icon.lg": {
-        "isVar": true,
-        "key": "$lg",
-        "name": "icon-3",
-        "val": 32,
         "variable": ""
       }
     }

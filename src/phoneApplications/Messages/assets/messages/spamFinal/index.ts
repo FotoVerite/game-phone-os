@@ -1,12 +1,12 @@
 import {
-  MESSAGE_CONTACT_INFO,
+  DEFAULT_CONVERSATION_INFO,
   MESSAGE_CONTACT_NAME,
 } from "@/src/phoneApplications/Messages/constants";
 import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
 const NAME = MESSAGE_CONTACT_NAME.SPAM1;
 export const spam1: ConversationFileType = {
-  name: NAME,
+  full_name: NAME,
   tags: [NAME],
   // effects: [
   //   {
@@ -23,8 +23,8 @@ export const spam1: ConversationFileType = {
   //     data: <P>You're not the one</P>,
   //   },
   // ],
-  heroImage: MESSAGE_CONTACT_INFO[NAME].avatar,
-  interfaceColor: MESSAGE_CONTACT_INFO[NAME].colors[0],
+  heroImage: DEFAULT_CONVERSATION_INFO.avatar,
+  interfaceColor: DEFAULT_CONVERSATION_INFO.colors[0],
   notificationRoutes: [],
   exchanges: [],
   routes: [],
