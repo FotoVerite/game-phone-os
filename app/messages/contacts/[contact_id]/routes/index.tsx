@@ -1,9 +1,10 @@
 import { Activity, Airplay } from "@tamagui/lucide-icons";
 import { useLocalSearchParams } from "expo-router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { XGroup, Button, YStack, Text, ScrollView } from "tamagui";
 import { create } from "zustand";
 
+import { AbstractRouteType } from "@/src/phoneApplications/Messages/hooks/routes/types";
 import { ConversationFilesStoreType } from "@/src/web/messages/ConversationFilesProvider";
 import { useInfoContext } from "@/src/web/messages/contexts/InfoContext";
 import RouteInformation from "@/src/web/messages/routes/RouteInformation";
@@ -13,16 +14,25 @@ export default function Routes() {
     "notifications"
   );
 
-  const { id } = useLocalSearchParams<{
-    id?: string;
+  const { contact_id } = useLocalSearchParams<{
+    contact_id: string;
   }>();
   const store = useInfoContext<ConversationFilesStoreType>();
   const { contacts, routesHash } = store();
 
-  if (!id) {
-    return <></>;
-  }
-  const info = contacts[id];
+  const info = contacts[contact_id];
+
+  const [routes, setRoutes] = useState<AbstractRouteType[]>([]);
+
+  useEffect(() => {
+    if (type === "notifications") {
+      setRoutes(info.notificationRoutes || []);
+    }
+    if (type === "choosable") {
+      setRoutes(info.routes || []);
+    }
+  }, [info, type]);
+
   return (
     <YStack paddingVertical="$2" f={1}>
       <XGroup size="$4" alignSelf="center">
@@ -41,8 +51,8 @@ export default function Routes() {
           </Button>
         </XGroup.Item>
       </XGroup>
-      <ScrollView>
-        {info.notificationRoutes?.map((r) => (
+      <ScrollView borderBlockColor="$gray6" borderTopWidth={2}>
+        {routes.map((r) => (
           <RouteInformation
             colors={info.colors || ["black", "black"]}
             route={r}

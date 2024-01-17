@@ -70,13 +70,15 @@ const conditionsToHumanReadable = (
         pt="$1"
         mt="$3"
       >
-        <H5 paddingHorizontal="$2" paddingBottom="$1.5" fontWeight="800">
-          <Link href={`/messages/contacts/${name}`}>{name}</Link>
-        </H5>
+        <Link href={`/messages/contacts/${name}`}>
+          <H5 paddingHorizontal="$2" paddingBottom="$1.5" fontWeight="800">
+            {name}
+          </H5>
+        </Link>
         <>
           {parseViews(name, conditionals?.views)}
           {parseBlocked(conditionals?.blocked)}
-          {parseRoutesConditions(routesMap[name], conditionals?.routes)}
+          {parseRoutesConditions(name, routesMap[name], conditionals?.routes)}
         </>
       </YStack>
     );
@@ -116,6 +118,7 @@ const parseBlocked = (condition?: boolean) => {
   }
 };
 const parseRoutesConditions = (
+  contactName: string,
   routeHash: RouteHash,
   conditions?: RouteChosenConditionType
 ) => {
@@ -123,7 +126,6 @@ const parseRoutesConditions = (
     return <></>;
   }
   return Object.keys(conditions).map((id) => {
-    console.log(id, routeHash[id], conditions[id]);
     const { name, options } = routeHash[id];
     const { status, chosen, not_chosen, timeSince } = conditions[id];
     return (
@@ -133,9 +135,14 @@ const parseRoutesConditions = (
             backgroundColor="$gray10"
             paddingHorizontal="$2"
             paddingVertical="$2"
-            fontSize={15}
+            fontStyle="italic"
+            textShadowColor="#00000088"
+            textShadowOffset={{ width: 1, height: 1 }}
+            textShadowRadius={2}
           >
-            {name}
+            <Link href={`/messages/contacts/${contactName}/routes/${name}`}>
+              {name}
+            </Link>
           </Paragraph>
           <View paddingHorizontal="$2">
             <Paragraph>{status && humanReadableRouteStatus(status)}</Paragraph>

@@ -5,8 +5,9 @@ import SiteContainer from "@/src/web/SiteContainer";
 import ConversationFilesProvider from "@/src/web/messages/ConversationFilesProvider";
 
 export default function MessagesLayout() {
-  const { id } = useGlobalSearchParams<{
+  const { id, contact_id } = useGlobalSearchParams<{
     id?: string;
+    contact_id?: string;
   }>();
 
   return (
@@ -18,17 +19,24 @@ export default function MessagesLayout() {
             options={{ presentation: "fullScreenModal", headerShown: false }}
           />
           <Stack.Screen
-            name="contacts/[id]"
+            name="contacts/[contact_id]"
             options={{
               headerBackVisible: true,
-              headerTitle: `Contact: ${id}`,
+              headerTitle: `${contact_id}`,
             }}
           />
           <Stack.Screen
-            name="routes/[id]"
+            name="contacts/[contact_id]/routes/[id]"
             options={{
               headerBackVisible: true,
-              headerTitle: `Routes For: ${id}`,
+              headerTitle: `${contact_id} - ${id}`,
+            }}
+          />
+          <Stack.Screen
+            name="contacts/[contact_id]/routes/index"
+            options={{
+              headerBackVisible: true,
+              headerTitle: `${contact_id} - Routes`,
             }}
           />
         </Stack>
