@@ -1,16 +1,11 @@
 import React, { FC, PropsWithChildren } from "react";
 
+import { RouteHash } from "./types";
 import { InfoContextProvider } from "../contexts/InfoContext";
-import { ContactRouteHashType, RouteHash } from "../utility/showConditions";
 
 import useDefaults from "@/app/messages/hooks/useDefault";
+import { ROUTE_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
 import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
-
-export interface ConversationFilesStoreType {
-  contacts: { [index: string]: ConversationFileType };
-  errors: string[];
-  routesHash: ContactRouteHashType;
-}
 
 const ConversationFilesProvider: FC<PropsWithChildren> = ({ children }) => {
   const contactFiles = require.context(
@@ -31,10 +26,19 @@ const ConversationFilesProvider: FC<PropsWithChildren> = ({ children }) => {
   const reduceToRoutes = (contact: ConversationFileType) => {
     const routes = {} as RouteHash;
     for (const route of contact.routes) {
-      routes[route.id] = { name: route.name, options: route.options };
+      routes[route.id] = {
+        type: ROUTE_TYPE.CHOOSE,
+        name: route.name,
+        options: route.options,
+        route: route.routes,
+      };
     }
     for (const route of contact.notificationRoutes || []) {
-      routes[route.id] = { name: route.name };
+      routes[route.id] = {
+        type: ROUTE_TYPE.NOTIFICATION,
+        name: route.name,
+        exchanges: route.exchanges,
+      };
     }
     return routes;
   };

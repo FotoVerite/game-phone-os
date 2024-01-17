@@ -6,20 +6,12 @@ import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants
 import {
   OptionType,
   ROUTE_STATUS_TYPE,
-  RouteBlockedConditionType,
   RouteChosenConditionType,
   RouteConditionsType,
   RouteViewedConditionType,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
 type ltgtType = "lt" | "gt" | "lte" | "gte";
-
-export type RouteHash = {
-  [routeId: string]: { name?: string; options?: OptionType[] | string[] };
-};
-export type ContactRouteHashType = {
-  [full_name: string]: RouteHash;
-};
 
 const humanReadableRouteStatus = (status: ROUTE_STATUS_TYPE) => {
   switch (status) {
@@ -140,7 +132,7 @@ const parseRoutesConditions = (
             textShadowOffset={{ width: 1, height: 1 }}
             textShadowRadius={2}
           >
-            <Link href={`/messages/contacts/${contactName}/routes/${name}`}>
+            <Link href={`/messages/contacts/${contactName}/routes/${id}`}>
               {name}
             </Link>
           </Paragraph>

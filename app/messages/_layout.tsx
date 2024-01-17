@@ -19,7 +19,7 @@ export default function MessagesLayout() {
             options={{ presentation: "fullScreenModal", headerShown: false }}
           />
           <Stack.Screen
-            name="contacts/[contact_id]"
+            name="contacts/[contact_id]/index"
             options={{
               headerBackVisible: true,
               headerTitle: `${contact_id}`,
