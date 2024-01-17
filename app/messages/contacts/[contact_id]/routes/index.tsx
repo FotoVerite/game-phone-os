@@ -2,10 +2,10 @@ import { Activity, Airplay } from "@tamagui/lucide-icons";
 import { useLocalSearchParams } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { XGroup, Button, YStack, Text, ScrollView } from "tamagui";
-import { create } from "zustand";
 
+import useContactParams from "@/app/messages/hooks/useContactParams";
 import { AbstractRouteType } from "@/src/phoneApplications/Messages/hooks/routes/types";
-import { ConversationFilesStoreType } from "@/src/web/messages/ConversationFilesProvider";
+import { ConversationFilesStoreType } from "@/src/web/messages/ConversationFilesProvider/types";
 import { useInfoContext } from "@/src/web/messages/contexts/InfoContext";
 import RouteInformation from "@/src/web/messages/routes/RouteInformation";
 
@@ -14,9 +14,7 @@ export default function Routes() {
     "notifications"
   );
 
-  const { contact_id } = useLocalSearchParams<{
-    contact_id: string;
-  }>();
+  const contact_id = useContactParams();
   const store = useInfoContext<ConversationFilesStoreType>();
   const { contacts, routesHash } = store();
 

@@ -1,10 +1,11 @@
 import { Link } from "expo-router";
 import React from "react";
-import { H3, H4, H5, Paragraph, Text, View, YStack } from "tamagui";
+import { H5, Paragraph, View, YStack } from "tamagui";
+
+import { ContactRouteHashType } from "../ConversationFilesProvider/types";
 
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import {
-  OptionType,
   ROUTE_STATUS_TYPE,
   RouteChosenConditionType,
   RouteConditionsType,

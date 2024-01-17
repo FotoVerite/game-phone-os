@@ -9,12 +9,12 @@ import {
 import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
 const SELF = MESSAGE_CONTACT_NAME.PROTAGONIST;
-export const toSelf: ConversationFileType = {
-  full_name: "Protagonist",
-  name: MESSAGE_CONTACT_NAME.MY_SELF,
+const toSelf: ConversationFileType = {
+  full_name: MESSAGE_CONTACT_NAME.SELF,
+  displayName: "(315)-242-2424",
   tags: [SELF],
   colors: ["blue", "#363243"],
-  phone_number: "(315)-242-2424",
+  phoneNumber: "(315)-242-2424",
   age: 39,
   heroImage: DEFAULT_CONVERSATION_INFO.avatar,
   interfaceColor: "blue",
@@ -33,3 +33,4 @@ export const toSelf: ConversationFileType = {
     },
   ],
 };
+export default toSelf;

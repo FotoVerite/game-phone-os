@@ -1,20 +1,21 @@
-import {
-  ContentWithMetaType,
-  StringContentWithMeta,
-  isContentWithMeta,
-} from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
+import { X } from "@tamagui/lucide-icons";
 import React, { FC } from "react";
-import { YStack } from "tamagui";
+import { H2, Paragraph, View, XStack, YStack } from "tamagui";
 import { LinearGradient } from "tamagui/linear-gradient";
 
+import { StringContentWithMeta } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
+
 const StringMessage: FC<{
-  name: string;
   colors: string[];
   content: StringContentWithMeta;
-}> = ({ content, name, colors }) => {
+}> = ({ content, colors }) => {
   return (
     <YStack theme="dark">
-      <LinearGradient colors={colors}>{content.content}</LinearGradient>
+      <LinearGradient colors={colors} br="$6" marginVertical="$1">
+        <View p="$3">
+          <Paragraph>{content.content}</Paragraph>
+        </View>
+      </LinearGradient>
     </YStack>
   );
 };

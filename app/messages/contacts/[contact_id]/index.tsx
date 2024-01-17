@@ -2,7 +2,7 @@ import { useLocalSearchParams } from "expo-router";
 import React, { FC } from "react";
 
 import ContactInformation from "@/src/web/messages/ContactInformation";
-import { ConversationFilesStoreType } from "@/src/web/messages/ConversationFilesProvider";
+import { ConversationFilesStoreType } from "@/src/web/messages/ConversationFilesProvider/types";
 import { useInfoContext } from "@/src/web/messages/contexts/InfoContext";
 
 const Page: FC = () => {

@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 
 import StringMessage from "./StringMessage";
+import { ConversationFilesStoreType } from "../../ConversationFilesProvider/types";
+import { useInfoContext } from "../../contexts/InfoContext";
 
 import {
   MESSAGE_CONTENT,
@@ -10,13 +12,14 @@ import { MessageContentType } from "@/src/phoneApplications/Messages/hooks/useCo
 
 const MessageView: FC<{
   name: string;
-  colors: string[];
   content: MessageContentType;
-}> = ({ content, name, colors }) => {
+}> = ({ content, name }) => {
+  const store = useInfoContext<ConversationFilesStoreType>();
+  const colors = store().colorHash[name];
   if (isContentWithMeta(content)) {
     switch (content.type) {
       case MESSAGE_CONTENT.STRING:
-        return <StringMessage colors={colors} name={name} content={content} />;
+        return <StringMessage colors={colors} content={content} />;
       default:
         return <></>;
     }
@@ -24,7 +27,6 @@ const MessageView: FC<{
     return (
       <StringMessage
         colors={colors}
-        name={name}
         content={{ type: MESSAGE_CONTENT.STRING, content }}
       />
     );

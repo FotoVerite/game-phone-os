@@ -1,8 +1,14 @@
 import React, { FC } from "react";
-import { H2, YGroup, YStack } from "tamagui";
+import { H2, Text, YStack } from "tamagui";
 
 import useRouteParams from "@/app/messages/hooks/useRouteParams";
-import { ConversationFilesStoreType } from "@/src/web/messages/ConversationFilesProvider";
+import {
+  isChoosableRoute,
+  isNotificationRoute,
+} from "@/src/phoneApplications/Messages/hooks/routes/guards";
+import { ConversationFilesStoreType } from "@/src/web/messages/ConversationFilesProvider/types";
+import ChoosableRouteView from "@/src/web/messages/RouteView/ChoosableRouteView";
+import NotificationRouteView from "@/src/web/messages/RouteView/NotificationRouteView";
 import { useInfoContext } from "@/src/web/messages/contexts/InfoContext";
 
 const Page: FC = () => {
@@ -13,12 +19,14 @@ const Page: FC = () => {
     return <></>;
   }
   const info = contacts[contact_id];
-  console.log("HELLO", routesHash, info.full_name);
   const route = routesHash[info.full_name][id];
   return (
-    <YStack>
-      <H2>{route.name}</H2>
-      <YGroup></YGroup>
+    <YStack marginVertical="$4" f={1}>
+      <H2 p="$2">{route.name}</H2>
+      {isNotificationRoute(route) && (
+        <NotificationRouteView info={info} route={route} />
+      )}
+      {isChoosableRoute(route) && <ChoosableRouteView route={route} />}
     </YStack>
   );
 };

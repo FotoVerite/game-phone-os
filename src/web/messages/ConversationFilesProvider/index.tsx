@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren } from "react";
 
-import { RouteHash } from "./types";
+import { ContactRouteHashType, RouteLookupHash } from "./types";
 import { InfoContextProvider } from "../contexts/InfoContext";
 
 import useDefaults from "@/app/messages/hooks/useDefault";
@@ -23,22 +23,21 @@ const ConversationFilesProvider: FC<PropsWithChildren> = ({ children }) => {
     {} as { [name: string]: ConversationFileType }
   );
 
+  const colorHash = contactList.reduce(
+    (acc, contact) => {
+      acc[contact.full_name] = contact.colors;
+      return acc;
+    },
+    {} as { [index: string]: string[] }
+  );
+
   const reduceToRoutes = (contact: ConversationFileType) => {
-    const routes = {} as RouteHash;
+    const routes = {} as RouteLookupHash;
     for (const route of contact.routes) {
-      routes[route.id] = {
-        type: ROUTE_TYPE.CHOOSE,
-        name: route.name,
-        options: route.options,
-        route: route.routes,
-      };
+      routes[route.id] = { type: ROUTE_TYPE.CHOOSE, ...route };
     }
     for (const route of contact.notificationRoutes || []) {
-      routes[route.id] = {
-        type: ROUTE_TYPE.NOTIFICATION,
-        name: route.name,
-        exchanges: route.exchanges,
-      };
+      routes[route.id] = { type: ROUTE_TYPE.NOTIFICATION, ...route };
     }
     return routes;
   };
@@ -48,7 +47,9 @@ const ConversationFilesProvider: FC<PropsWithChildren> = ({ children }) => {
     return acc;
   }, {} as ContactRouteHashType);
   return (
-    <InfoContextProvider initialValue={{ contacts, errors, routesHash }}>
+    <InfoContextProvider
+      initialValue={{ contacts, errors, routesHash, colorHash }}
+    >
       {children}
     </InfoContextProvider>
   );
