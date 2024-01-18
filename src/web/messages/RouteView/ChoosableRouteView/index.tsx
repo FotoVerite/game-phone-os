@@ -1,17 +1,31 @@
 import React, { FC, useCallback, useEffect, useRef, useState } from "react";
 import { H4, ScrollView, XStack, YGroup, YStack, View, GetRef } from "tamagui";
 
-import OptionView from "..";
 import enumerateBlocks from "../../utility/enumerateBlocks";
-import MessageView from "../MessageView";
+import OptionView from "../OptionView";
 
-import { ChoosableRouteType } from "@/src/phoneApplications/Messages/hooks/routes/types";
+import { areSimpleOptions } from "@/src/phoneApplications/Messages/hooks/routes/guards";
+import {
+  ChoosableRouteType,
+  OptionType,
+} from "@/src/phoneApplications/Messages/hooks/routes/types";
 import { ExchangeBlockType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
+const extractDefaultValue = (options: string[] | OptionType[]) => {
+  if (options.length !== 1) {
+    return undefined;
+  }
+  if (areSimpleOptions(options)) {
+    return options[0];
+  }
+  return options[0].value;
+};
 const ChoosableRouteView: FC<{
   route: ChoosableRouteType;
 }> = ({ route }) => {
-  const [choice, setChoice] = useState<string | undefined>();
+  const options = route.options;
+  const defaultValue = extractDefaultValue(options);
+  const [choice, setChoice] = useState<string | undefined>(defaultValue);
   const [blocks, setBlocks] = useState<ExchangeBlockType[]>([]);
 
   const setter = useCallback(
@@ -29,22 +43,29 @@ const ChoosableRouteView: FC<{
   return (
     <YStack f={1}>
       <View>
-        <OptionView options={route.options} setter={setter} />
+        <OptionView
+          defaultValue={defaultValue}
+          options={route.options}
+          setter={setter}
+        />
       </View>
       <ScrollView
+        f={1}
         ref={scrollViewRef}
         onContentSizeChange={() => {
           scrollViewRef.current?.scrollTo({ y: 0, animated: false });
         }}
       >
-        <YStack
-          maw={1000}
+        <View
           alignSelf="center"
           backgroundColor="$gray10"
           borderRadius="$2"
+          maw={1000}
+          width={"100%"}
+          f={1}
         >
           {enumerateBlocks(blocks)}
-        </YStack>
+        </View>
       </ScrollView>
     </YStack>
   );

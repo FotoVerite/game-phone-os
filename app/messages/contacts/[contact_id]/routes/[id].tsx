@@ -22,7 +22,9 @@ const Page: FC = () => {
   const route = routesHash[info.full_name][id];
   return (
     <YStack marginVertical="$4" f={1}>
-      <H2 p="$2">{route.name}</H2>
+      <H2 p="$2" alignSelf="center">
+        {route.name}
+      </H2>
       {isNotificationRoute(route) && (
         <NotificationRouteView info={info} route={route} />
       )}

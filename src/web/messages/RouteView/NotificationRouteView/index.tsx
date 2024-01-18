@@ -11,7 +11,13 @@ const NotificationRouteView: FC<{
   info: ConversationFileType;
 }> = ({ info, route }) => {
   return (
-    <YStack backgroundColor="$gray10" borderRadius="$2">
+    <YStack
+      alignSelf="center"
+      backgroundColor="$gray10"
+      borderRadius="$2"
+      maw={700}
+      width={"100%"}
+    >
       {enumerateBlocks(route.exchanges)}
     </YStack>
   );

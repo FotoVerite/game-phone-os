@@ -4,22 +4,30 @@ import { XGroup, YStack, Text, ToggleGroup, Paragraph } from "tamagui";
 import { areSimpleOptions } from "@/src/phoneApplications/Messages/hooks/routes/guards";
 import { OptionType } from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-const createOptionToggles = (options: string[] | OptionType[]) => {
+const createOptionToggles = (
+  percentage: string,
+  options: string[] | OptionType[]
+) => {
   if (areSimpleOptions(options)) {
     return options.map((option) => (
-      <OptionToggle option={{ label: option, value: option }} key={option} />
+      <OptionToggle
+        percentage={percentage}
+        option={{ label: option, value: option }}
+        key={option}
+      />
     ));
   }
   return options.map((option) => (
-    <OptionToggle option={option} key={option.value} />
+    <OptionToggle percentage={percentage} option={option} key={option.value} />
   ));
 };
 
 const OptionToggle: FC<{
+  percentage: string;
   option: OptionType;
-}> = ({ option }) => {
+}> = ({ percentage, option }) => {
   return (
-    <ToggleGroup.Item value={option.value}>
+    <ToggleGroup.Item value={option.value} width={percentage}>
       <Paragraph color="white">{option.label}</Paragraph>
     </ToggleGroup.Item>
   );
@@ -28,16 +36,19 @@ const OptionToggle: FC<{
 const OptionView: FC<{
   setter: (value: string) => void;
   options: OptionType[] | string[];
+  defaultValue?: string;
 }> = ({ options, setter }) => {
+  const percentage = Math.ceil(100 / options.length) + "%";
   return (
-    <YStack paddingVertical="$2" f={1}>
+    <YStack>
       <XGroup size="$4" alignSelf="center">
         <ToggleGroup
-          theme="dark"
+          theme="dark_alt1"
           type="single"
           onValueChange={(value) => setter(value)}
+          w="90%"
         >
-          {createOptionToggles(options)}
+          {createOptionToggles(percentage, options)}
         </ToggleGroup>
       </XGroup>
     </YStack>

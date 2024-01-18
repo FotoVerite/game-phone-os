@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 
+import ImageMessage from "./ImageMessage";
 import StringMessage from "./StringMessage";
 import { ConversationFilesStoreType } from "../../ConversationFilesProvider/types";
 import { useInfoContext } from "../../contexts/InfoContext";
@@ -20,6 +21,8 @@ const MessageView: FC<{
     switch (content.type) {
       case MESSAGE_CONTENT.STRING:
         return <StringMessage colors={colors} content={content} />;
+      case MESSAGE_CONTENT.IMAGE:
+        return <ImageMessage content={content} />;
       default:
         return <></>;
     }

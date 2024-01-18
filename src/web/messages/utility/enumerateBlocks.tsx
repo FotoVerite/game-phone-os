@@ -13,13 +13,19 @@ const enumerateBlocks = (blocks: ExchangeBlockType[]) => {
 
     return (
       <YGroup
-        f={1}
         key={`block-group-${index}-${block.name}`}
         p="$4"
+        w={"70%"}
         alignSelf={alignment}
         alignItems={alignment}
       >
-        <H4>{block.name}</H4>
+        <H4
+          theme="dark"
+          marginLeft={block.name === MESSAGE_CONTACT_NAME.SELF ? 0 : "$2"}
+          marginRight={block.name === MESSAGE_CONTACT_NAME.SELF ? "$2" : 0}
+        >
+          {block.name}
+        </H4>
         {block.messages.map((message, innerIndex) => (
           <MessageView
             key={`message-${index}-${innerIndex}`}
