@@ -4,9 +4,8 @@ import {
 } from "@/src/phoneApplications/Messages/constants";
 import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
-const NAME = MESSAGE_CONTACT_NAME.SPAM1;
+const NAME = "Unknown";
 export const spam1: ConversationFileType = {
-  full_name: NAME,
   tags: [NAME],
   // effects: [
   //   {

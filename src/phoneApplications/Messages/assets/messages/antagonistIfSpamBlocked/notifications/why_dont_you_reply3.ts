@@ -1,21 +1,27 @@
+import { ROUTE_IDS_ANTAGONIST_BLOCKED_ROUTES } from "../routes/routes";
+
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import { MESSAGE_CONTENT } from "@/src/phoneApplications/Messages/hooks/contentWithMetaTypes";
-import { ROUTE_STATUS_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
+import {
+  NotificationRouteFileType,
+  ROUTE_STATUS_TYPE,
+} from "@/src/phoneApplications/Messages/hooks/routes/types";
 
-import { ANTAGONIST_IF_BLOCKED } from "../routes/routes";
-
-export const why_dont_you_respond3 = {
-  id: ANTAGONIST_IF_BLOCKED.WHY_DONT_YOU_RESPOND3,
+export const why_dont_you_respond3: NotificationRouteFileType = {
+  id: ROUTE_IDS_ANTAGONIST_BLOCKED_ROUTES.NOTIFICATION_THIRD_WHY_DONT_YOU_RESPOND,
+  name: "Why don't you reply third notification",
   conditions: {
     [MESSAGE_CONTACT_NAME.SPAM2]: {
       routes: {
-        [ANTAGONIST_IF_BLOCKED.WHY_DONT_YOU_RESPOND2]: {
-          status: ROUTE_STATUS_TYPE.FINISHED,
-          timeSince: 10000,
-        },
-        [ANTAGONIST_IF_BLOCKED.WHAT_IS_WITH_THIS_SERIAL_STALKER_BULLSHIT]: {
-          status: ROUTE_STATUS_TYPE.AVAILABLE,
-        },
+        [ROUTE_IDS_ANTAGONIST_BLOCKED_ROUTES.NOTIFICATION_SECOND_WHY_DONT_YOU_RESPOND]:
+          {
+            status: ROUTE_STATUS_TYPE.FINISHED,
+            timeSince: 10000,
+          },
+        [ROUTE_IDS_ANTAGONIST_BLOCKED_ROUTES.PROTAG_WHAT_IS_THIS_SERIAL_KILLER_BULLSHIT]:
+          {
+            status: ROUTE_STATUS_TYPE.AVAILABLE,
+          },
       },
     },
   },

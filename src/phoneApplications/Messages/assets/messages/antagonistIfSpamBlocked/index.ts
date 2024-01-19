@@ -1,12 +1,12 @@
 import { produce } from "immer";
 
-import { what_is_with_this_serial_killer_bullshit } from "./choosable/antagonist_what_is_with_this_serial_killer_bullshit";
+import { antagonist_blocked_what_is_this_serial_killer_bullshit } from "./choosable/antagonist_what_is_with_this_serial_killer_bullshit";
 import { dont_you_miss_me } from "./notifications/dont_you_miss_me";
 import { why_dont_you_respond } from "./notifications/why_dont_you_reply";
 import { why_dont_you_respond2 } from "./notifications/why_dont_you_reply2";
 import { why_dont_you_respond3 } from "./notifications/why_dont_you_reply3";
 import { why_dont_you_respond4 } from "./notifications/why_dont_you_reply4";
-import { ANTAGONIST_IF_BLOCKED } from "./routes/routes";
+import { ROUTE_IDS_ANTAGONIST_BLOCKED_ROUTES } from "./routes/routes";
 import {
   DEFAULT_CONVERSATION_INFO,
   MESSAGE_CONTACT_NAME,
@@ -16,7 +16,7 @@ import { ConversationFileType } from "../../../hooks/useConversations/types";
 const createReplications = (
   original: ConversationFileType,
   replicateName: MESSAGE_CONTACT_NAME,
-  deleteRoute?: number
+  deleteRoute?: string
 ) => {
   return produce(original, (draft) => {
     const originalName = draft.full_name;
@@ -60,6 +60,8 @@ const createReplications = (
 const NAME = MESSAGE_CONTACT_NAME.SPAM2;
 const antagonistIfSpamBlocked: ConversationFileType = {
   full_name: NAME,
+  displayName: "1-223-666-1337",
+  phoneNumber: "1-223-666-1337",
   tags: [NAME],
   heroImage: DEFAULT_CONVERSATION_INFO.avatar,
   colors: DEFAULT_CONVERSATION_INFO.colors,
@@ -75,7 +77,7 @@ const antagonistIfSpamBlocked: ConversationFileType = {
     conditions: {
       [MESSAGE_CONTACT_NAME.SPAM2]: {
         routes: {
-          [ANTAGONIST_IF_BLOCKED.WHY_DONT_YOU_RESPOND4]: {
+          [ROUTE_IDS_ANTAGONIST_BLOCKED_ROUTES.NOTIFICATION_DONT_YOU_MISS_ME]: {
             status: ROUTE_STATUS_TYPE.CONDITIONS_NOT_MET,
           },
         },
@@ -83,7 +85,7 @@ const antagonistIfSpamBlocked: ConversationFileType = {
     },
   },
   exchanges: [],
-  routes: [what_is_with_this_serial_killer_bullshit],
+  routes: [antagonist_blocked_what_is_this_serial_killer_bullshit],
 };
 
 export const antagonist1 = { ...antagonistIfSpamBlocked };
@@ -91,7 +93,7 @@ export const antagonist1 = { ...antagonistIfSpamBlocked };
 export const antagonist2 = createReplications(
   antagonistIfSpamBlocked,
   MESSAGE_CONTACT_NAME.SPAM3,
-  ANTAGONIST_IF_BLOCKED.DONT_YOU_MISS_ME
+  ROUTE_IDS_ANTAGONIST_BLOCKED_ROUTES.NOTIFICATION_DONT_YOU_MISS_ME
 );
 
 export const antagonist3 = createReplications(

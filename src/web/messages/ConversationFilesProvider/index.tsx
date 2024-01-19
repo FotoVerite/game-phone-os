@@ -4,6 +4,7 @@ import { ContactRouteHashType, RouteLookupHash } from "./types";
 import { InfoContextProvider } from "../contexts/InfoContext";
 
 import useDefaults from "@/app/messages/hooks/useDefault";
+import useExports from "@/app/messages/hooks/useExports";
 import { ROUTE_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
 import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";
 
@@ -14,7 +15,7 @@ const ConversationFilesProvider: FC<PropsWithChildren> = ({ children }) => {
     /\index.ts|index.tsx$/
   );
 
-  const [contactList, errors] = useDefaults<ConversationFileType>(contactFiles);
+  const [contactList, errors] = useExports<ConversationFileType>(contactFiles);
   const contacts = contactList.reduce(
     (acc, contact) => {
       acc[contact.full_name] = contact;

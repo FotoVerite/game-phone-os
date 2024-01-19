@@ -8,6 +8,7 @@ import {
 
 export const your_day_worse_then_mine: NotificationRouteFileType = {
   id: ROUTE_IDS_ZARA_BENTHAM.NOTIFICATION_YOUR_DAY_IS_WORSE_THAN_MINE,
+  name: "I think your day might be worse then mine",
   purpose:
     "Shows the user that contacts can just message after a set time and not do to a reaction",
   delay: 3000,

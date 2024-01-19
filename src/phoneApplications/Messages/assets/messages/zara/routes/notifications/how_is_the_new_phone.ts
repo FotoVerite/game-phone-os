@@ -1,4 +1,4 @@
-import { TO_SELF_IDS } from "../../../toSelf/routes/routes";
+import { ROUTE_IDS_PROTAGONIST } from "../../../toSelf/routes/routes";
 import { ROUTE_IDS_ZARA_BENTHAM } from "../routes";
 
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
@@ -16,7 +16,7 @@ export const how_is_the_phone_coming: NotificationRouteFileType = {
   conditions: {
     [MESSAGE_CONTACT_NAME.SELF]: {
       routes: {
-        [TO_SELF_IDS.CHECK_IF_TEXT_IS_WORKING]: {
+        [ROUTE_IDS_PROTAGONIST.CHECK_IF_TEXT_IS_WORKING]: {
           status: ROUTE_STATUS_TYPE.FINISHED,
         },
       },

@@ -27,6 +27,8 @@ const SELF = MESSAGE_CONTACT_NAME.SELF;
 
 export const borked_phone: ChoosableRouteType = {
   id: ROUTE_IDS_ZARA_BENTHAM.PROTAG_I_BORKED_MY_PHONE,
+  name: "I borked my Phone",
+  description: "Protagonist explains why his account has no contacts",
   options: [
     {
       label: options.B,

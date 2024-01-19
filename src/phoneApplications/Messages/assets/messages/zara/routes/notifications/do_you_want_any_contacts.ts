@@ -9,6 +9,7 @@ import {
 
 export const zara_do_you_want_any_contacts: NotificationRouteFileType = {
   id: ROUTE_IDS_ZARA_BENTHAM.NOTIFICATION_DO_YOU_WANT_ANY_CONTACTS,
+  name: "Do you want any contacts?",
   delay: 2500,
   conditions: {
     [MESSAGE_CONTACT_NAME.MICHAEL]: {

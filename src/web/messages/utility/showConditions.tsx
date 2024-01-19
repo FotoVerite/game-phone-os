@@ -2,7 +2,10 @@ import { Link } from "expo-router";
 import React from "react";
 import { H5, Paragraph, View, YStack } from "tamagui";
 
-import { ContactRouteHashType } from "../ConversationFilesProvider/types";
+import {
+  ContactRouteHashType,
+  RouteLookupHash,
+} from "../ConversationFilesProvider/types";
 
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import {
@@ -32,7 +35,7 @@ const displayConditions = (
   routesMap: ContactRouteHashType,
   conditions?: RouteConditionsType | RouteConditionsType[]
 ) => {
-  if (!conditions) {
+  if (!conditions || conditions == null) {
     return <></>;
   }
   if (Array.isArray(conditions)) {
@@ -107,12 +110,16 @@ const parseViews = (name: string, conditions?: RouteViewedConditionType) => {
 };
 const parseBlocked = (condition?: boolean) => {
   if (condition) {
-    return <Paragraph color="$gray2">Blocked</Paragraph>;
+    return (
+      <Paragraph theme="dark" p="$2">
+        Has Been Blocked
+      </Paragraph>
+    );
   }
 };
 const parseRoutesConditions = (
   contactName: string,
-  routeHash: RouteHash,
+  routeHash: RouteLookupHash,
   conditions?: RouteChosenConditionType
 ) => {
   if (!conditions) {
@@ -123,20 +130,20 @@ const parseRoutesConditions = (
     const { status, chosen, not_chosen, timeSince } = conditions[id];
     return (
       <View key={`${name}-${id}`}>
-        <View backgroundColor="$gray10" bbrr="$2" bblr="$2">
-          <Paragraph
-            backgroundColor="$gray10"
-            paddingHorizontal="$2"
-            paddingVertical="$2"
-            fontStyle="italic"
-            textShadowColor="#00000088"
-            textShadowOffset={{ width: 1, height: 1 }}
-            textShadowRadius={2}
-          >
-            <Link href={`/messages/contacts/${contactName}/routes/${id}`}>
+        <View backgroundColor="$gray10" bbrr="$2" bblr="$2" paddingTop="$1">
+          <Link href={`/messages/contacts/${contactName}/routes/${id}`}>
+            <Paragraph
+              backgroundColor="$gray10"
+              paddingHorizontal="$2"
+              fontStyle="italic"
+              textShadowColor="#00000088"
+              textShadowOffset={{ width: 1, height: 1 }}
+              textShadowRadius={2}
+            >
               {name}
-            </Link>
-          </Paragraph>
+            </Paragraph>
+          </Link>
+
           <View paddingHorizontal="$2">
             <Paragraph>{status && humanReadableRouteStatus(status)}</Paragraph>
             {chosen && (

@@ -26,8 +26,14 @@ const OptionToggle: FC<{
   percentage: string;
   option: OptionType;
 }> = ({ percentage, option }) => {
+  const disabled = option.effect != null;
   return (
-    <ToggleGroup.Item value={option.value} width={percentage}>
+    <ToggleGroup.Item
+      value={option.value}
+      width={percentage}
+      disabled={disabled}
+      backgroundColor={disabled ? "$red6" : undefined}
+    >
       <Paragraph color="white">{option.label}</Paragraph>
     </ToggleGroup.Item>
   );
@@ -44,6 +50,7 @@ const OptionView: FC<{
       <XGroup size="$4" alignSelf="center">
         <ToggleGroup
           theme="dark_alt1"
+          disablePassBorderRadius="bottom"
           type="single"
           onValueChange={(value) => setter(value)}
           w="90%"

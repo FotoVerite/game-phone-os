@@ -37,8 +37,12 @@ const RouteInformation: FC<{
         <Link href={`/messages/contacts/${contact_id}/routes/${route.id}`}>
           <H2>{route.name}</H2>
         </Link>
-        {spacer}
-        <H3>Conditions</H3>
+        {route.conditions && (
+          <>
+            {spacer}
+            <H3>Conditions</H3>
+          </>
+        )}
         {displayConditions(route.name, contactRouteHash, route.conditions)}
       </YStack>
     </Theme>

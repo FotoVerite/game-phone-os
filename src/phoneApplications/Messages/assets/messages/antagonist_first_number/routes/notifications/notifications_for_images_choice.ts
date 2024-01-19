@@ -6,7 +6,6 @@ import { ROUTE_IDS_ANTAGONIST_FIRST_NUMBER } from "../routes";
 import { MESSAGE_CONTACT_NAME } from "@/src/phoneApplications/Messages/constants";
 import {
   NotificationRouteFileType,
-  NotificationRouteType,
   ROUTE_STATUS_TYPE,
 } from "@/src/phoneApplications/Messages/hooks/routes/types";
 

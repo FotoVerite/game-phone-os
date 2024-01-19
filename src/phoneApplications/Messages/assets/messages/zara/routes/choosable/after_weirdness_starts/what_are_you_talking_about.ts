@@ -21,6 +21,7 @@ const SPAM = MESSAGE_CONTACT_NAME.SPAM4;
 
 export const zara_what_are_you_talking_about: ChoosableRouteType = {
   id: ROUTE_IDS_ZARA_BENTHAM.WHAT_ARE_YOU_TALKING_ABOUT,
+  name: "What are you talking about?",
   purpose:
     "Demonstrates that nothing on the phone can be trusted a that Antagonist is fully in control of what gets displayed.",
   options: Object.values(OPTIONS),

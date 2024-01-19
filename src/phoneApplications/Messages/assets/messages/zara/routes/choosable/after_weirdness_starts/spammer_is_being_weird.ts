@@ -146,6 +146,7 @@ const baseMessages = [
 
 export const spammer_is_being_weird: ChoosableRouteType = {
   id: ROUTE_IDS_ZARA_BENTHAM.PROTAG_THAT_SPAMMER_IS_BEING_CREEPY,
+  name: "That Spammer is being creepy",
   options: [
     {
       label: SPAMMER_IS_BEING_WEIRD_OPTIONS.A,

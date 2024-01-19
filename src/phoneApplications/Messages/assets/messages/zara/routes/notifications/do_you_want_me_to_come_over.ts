@@ -5,6 +5,7 @@ import { NotificationRouteFileType } from "@/src/phoneApplications/Messages/hook
 
 export const zara_do_you_want_any_contacts: NotificationRouteFileType = {
   id: ROUTE_IDS_ZARA_BENTHAM.NOTIFICATION_DO_YOU_WANT_ME_TO_COME_OVER,
+  name: "Do you want me to come over",
   purpose:
     "Zara showing concern and how everyone Protagonist is interacting with is noticing his change in behavior.",
   delay: 2500,

@@ -14,6 +14,7 @@ const SELF = MESSAGE_CONTACT_NAME.SELF;
 
 export const am_i_really_talking_to_you: ChoosableRouteType = {
   id: ROUTE_IDS_ZARA_BENTHAM.PROTAG_AM_I_REALLY_TALKING_TO_YOU,
+  name: "Protagonist questions the validity of this conversation",
   options: Object.values(OPTIONS_ZARA_BENTHAM_AM_I_REALLY_TALKING_TO_YOU),
   conditions: {
     [MESSAGE_CONTACT_NAME.ZARA]: {

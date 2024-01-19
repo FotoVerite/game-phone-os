@@ -5,7 +5,7 @@ import { i_am_excited_to_see_you_tonight } from "./routes/notifications/i_am_exc
 import { MESSAGE_CONTACT_NAME } from "../../../constants";
 import { ConversationFileType } from "../../../hooks/useConversations/types";
 
-export const michael: ConversationFileType = {
+const michael: ConversationFileType = {
   full_name: MESSAGE_CONTACT_NAME.MICHAEL,
   displayName: "Maybe: Michael",
   age: 35,
@@ -18,3 +18,5 @@ export const michael: ConversationFileType = {
   routes: [michael_about_tonight_reply, i_feel_wrong],
   exchanges: [],
 };
+
+export default michael;
