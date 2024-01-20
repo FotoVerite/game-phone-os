@@ -58,10 +58,10 @@ const ChoosableRouteView: FC<{
       >
         <View
           alignSelf="center"
-          backgroundColor="$gray10"
+          backgroundColor="$gray9"
           borderRadius="$2"
           maw={1000}
-          width={"100%"}
+          width="100%"
           f={1}
         >
           {enumerateBlocks(blocks)}

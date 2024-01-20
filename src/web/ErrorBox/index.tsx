@@ -4,6 +4,9 @@ import { H3, Text, YStack } from "tamagui";
 const ErrorBox: FC<
   PropsWithChildren & { title?: string; errors?: string[] }
 > = ({ children, errors, title }) => {
+  if (!errors || errors.length === 0) {
+    return <></>;
+  }
   return (
     <YStack
       bc="$red6"
@@ -11,7 +14,7 @@ const ErrorBox: FC<
       bw={3}
       borderStyle="solid"
       borderRadius={12}
-      p={"$3"}
+      p="$3"
     >
       {title && <H3>{title}</H3>}
       {errors &&

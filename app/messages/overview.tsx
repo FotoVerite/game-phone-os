@@ -2,12 +2,9 @@ import React from "react";
 import { H1, View, XStack, YStack } from "tamagui";
 
 import ErrorBox from "@/src/web/ErrorBox";
-import SiteContainer from "@/src/web/SiteContainer";
 import ContactCard from "@/src/web/messages/ContactCard";
 import ConversationSideBar from "@/src/web/messages/ContactSideBar";
-import ConversationFilesProvider, {
-  ConversationFilesStoreType,
-} from "@/src/web/messages/ConversationFilesProvider";
+import { ConversationFilesStoreType } from "@/src/web/messages/ConversationFilesProvider/types";
 import { useInfoContext } from "@/src/web/messages/contexts/InfoContext";
 
 function FileImportErrors() {

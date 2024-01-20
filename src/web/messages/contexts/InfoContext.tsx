@@ -37,7 +37,9 @@ const InfoContextProvider = <T, V>({
 const useInfoContext = <T,>() => {
   const store = useContext<StoreApi<T> | null>(InfoContext);
   if (!store) {
-    throw new Error("useInfoContext must be used within a InfoContext");
+    throw new Error(
+      `useInfoContext must be used within a Zustand Context Provider`
+    );
   }
   return createBoundedUseStore(store);
 };

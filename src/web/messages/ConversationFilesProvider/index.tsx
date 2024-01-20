@@ -3,7 +3,6 @@ import React, { FC, PropsWithChildren } from "react";
 import { ContactRouteHashType, RouteLookupHash } from "./types";
 import { InfoContextProvider } from "../contexts/InfoContext";
 
-import useDefaults from "@/app/messages/hooks/useDefault";
 import useExports from "@/app/messages/hooks/useExports";
 import { ROUTE_TYPE } from "@/src/phoneApplications/Messages/hooks/routes/types";
 import { ConversationFileType } from "@/src/phoneApplications/Messages/hooks/useConversations/types";

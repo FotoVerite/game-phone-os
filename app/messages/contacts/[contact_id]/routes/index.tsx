@@ -1,5 +1,5 @@
 import { Activity, Airplay } from "@tamagui/lucide-icons";
-import { useLocalSearchParams } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { XGroup, Button, YStack, Text, ScrollView } from "tamagui";
 
@@ -32,33 +32,49 @@ export default function Routes() {
   }, [info, type]);
 
   return (
-    <YStack paddingVertical="$2" f={1}>
-      <XGroup size="$4" alignSelf="center">
-        <XGroup.Item>
-          <Button
-            size="$8"
-            icon={Activity}
-            onPress={() => setType("notifications")}
-          >
-            <Text>Notifications {info.notificationRoutes?.length}</Text>
-          </Button>
-        </XGroup.Item>
-        <XGroup.Item>
-          <Button size="$8" icon={Airplay} onPress={() => setType("choosable")}>
-            <Text>Choosable {info.routes.length}</Text>
-          </Button>
-        </XGroup.Item>
-      </XGroup>
-      <ScrollView borderBlockColor="$gray6" borderTopWidth={2}>
-        {routes.map((r) => (
-          <RouteInformation
-            colors={info.colors || ["black", "black"]}
-            route={r}
-            contactRouteHash={routesHash}
-            key={`route-${r.id}`}
-          />
-        ))}
-      </ScrollView>
-    </YStack>
+    <>
+      <Stack.Screen
+        options={{
+          title: `${contact_id} - Routes`,
+          headerStyle: { backgroundColor: info.interfaceColor },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      />
+      <YStack paddingVertical="$2" f={1}>
+        <XGroup size="$4" alignSelf="center">
+          <XGroup.Item>
+            <Button
+              size="$8"
+              icon={Activity}
+              onPress={() => setType("notifications")}
+            >
+              <Text>Notifications {info.notificationRoutes?.length}</Text>
+            </Button>
+          </XGroup.Item>
+          <XGroup.Item>
+            <Button
+              size="$8"
+              icon={Airplay}
+              onPress={() => setType("choosable")}
+            >
+              <Text>Choosable {info.routes.length}</Text>
+            </Button>
+          </XGroup.Item>
+        </XGroup>
+        <ScrollView borderBlockColor="$gray6" borderTopWidth={2}>
+          {routes.map((r) => (
+            <RouteInformation
+              colors={info.colors || ["black", "black"]}
+              route={r}
+              contactRouteHash={routesHash}
+              key={`route-${r.id}`}
+            />
+          ))}
+        </ScrollView>
+      </YStack>
+    </>
   );
 }

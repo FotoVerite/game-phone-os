@@ -35,7 +35,7 @@ export default function MessagesLayout() {
           <Stack.Screen
             name="contacts/[contact_id]/routes/index"
             options={{
-              headerBackVisible: true,
+              headerBackVisible: false,
               headerTitle: `${contact_id} - Routes`,
             }}
           />

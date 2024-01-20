@@ -1,4 +1,4 @@
-import { useLocalSearchParams } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 import React, { FC } from "react";
 
 import ContactInformation from "@/src/web/messages/ContactInformation";
@@ -16,7 +16,21 @@ const Page: FC = () => {
   }
   const info = contacts[contact_id];
 
-  return <ContactInformation info={info} />;
+  return (
+    <>
+      <Stack.Screen
+        options={{
+          title: contact_id,
+          headerStyle: { backgroundColor: info.interfaceColor },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      />
+      <ContactInformation info={info} />
+    </>
+  );
 };
 
 export default Page;
